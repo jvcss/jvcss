@@ -1,54 +1,53 @@
 <svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-	<foreignObject width="100%" height="100%">
-		<div xmlns="http://www.w3.org/1999/xhtml">
-			<style>
-			:root {
-      --dark-color: #80e9ff;
-      --light-color: #80e9ff;
-    }
-    svg{
-      cursor: pointer;
-      
-    }
-    #startGroup{
-      fill: var(--dark-color);
-      visibility: visible;
-    }
-    #endGroup{
-      fill: var(--light-color);
-      opacity: 0;
-      transition: all 1s ease-in-out;
-      width: 240px;
-    }
-    #startGroup{
-      transition: all 1s ease, opacity 0.3s linear;
-      transform:  translateY(-5%) translateX(-5%) ;
-    }
-    
-    /*ACTIONS WHEN WE PASS THE MOUSE THROUTH THE IMAGE*/
-    svg:hover #startGroup{
-      transform-origin: right;
-      transform: translate(1%, 1%) rotate(300deg) scale(7) ;
-      /*transform:  translateY(5%) translateX(5%) ;*/
-      visibility: hidden;
-      opacity: 1;
-    }
-    svg:hover #endGroup{
-      transition: all 1s ease-in-out;
-      width: 12px;
-      visibility: visible;
-      opacity: 1;
-    }
-			</style>
-			<g id="bubbles">
 
-      <g id="startGroup">
-        <ellipse id="smallBlue" cx="425" cy="123.5" rx="5" ry="3.5" fill-opacity="0.9" />
-      </g>
-      <g id="endGroup">
-        <rect id="Rectangle 1" x="420" y="120" width="420" height="120" rx="4" fill-opacity="0.8" />
-      </g>
+  <style>
+  :root {
+    --dark-color: #80e9ff;
+    --light-color: #80e9ff;
+  }
+  @keyframes fadeBubble{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  @keyframes fadeBox{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  svg{
+    cursor: pointer;
+  }
+  #startGroup{
+    fill: var(--dark-color);
+  }
+  #endGroup{
+    fill: var(--light-color);
+  }
+  #startGroup{
+    animation: fadeBubble 1s;
+  }
+  #endGroup{
+    animation: fadeBox 1s;
+  }
+  
+  </style>
+  
+  <g id="bubbles">
+    <g id="startGroup">
+      <ellipse id="smallBlue" cx="425" cy="123.5" rx="5" ry="3.5" fill-opacity="0.9" />
     </g>
-		</div>
-	</foreignObject>
+    <g id="endGroup">
+      <rect id="Rectangle 1" x="420" y="120" width="420" height="120" rx="4" fill-opacity="0.8" />
+    </g>
+  </g>
+  
 </svg>
