@@ -14,12 +14,6 @@
 def sum_arithmetic_progression(number):
     return (number)*(number+1)//2
 
-"""
-Dado o conjunto dos números naturais, não nulos, qual é a soma dos seus 200 primeiros números pares?
-"""
-"""
-Given the set of nonzero natural numbers, what is the sum of your first 200 even numbers?
-"""
 def witch_is_the_sum_of_term(arr):
     
     #print(f'last_term {arr[-1:][0]}') #LAST TERM EASY ACCESS
@@ -38,18 +32,43 @@ def witch_is_the_sum_of_term(arr):
 CALL ALL EXERCISES
 """
 def callers():
-  """
-  # witch_is_the_sum_of_term
-  #
-  # s=range(1,200,2) # list with first 200 even numbers
-  """
-  s = witch_is_the_sum_of_term(range(2,401,2))#first even interval
-  print(f'witch is the sum of term {s}')
-  
   #
   #
   #
   print("simple sum {}".format(sum_arithmetic_progression(100)))
+  #
+  #
+  #
+  """
+  Dado o conjunto dos números naturais, não nulos, qual é a soma dos seus 200 primeiros números pares?
+  """
+  """
+  Given the set of nonzero natural numbers, what is the sum of your first 200 even numbers?
+  """
+  """
+  # s=range(1,200,2) # list with first 200 even numbers
+  """
+  s = witch_is_the_sum_of_term(range(2,401,2))
+  print(f'witch is the sum of term {s}')
+  
+  """
+  Com o intuito de construir um jogo novo, foram colocados sobre um tabuleiro de xadrez grãos de arroz da seguinte maneira: 
+  na primeira casa, foram colocados 5 grãos; na segunda, 10; na terceira, 15; e assim por diante.
+  Quantos grãos de arroz foram usados nesse tabuleiro?
+  """
+  """
+  grains of rice were placed on a chessboard as follows: in the first square, 5 grains were placed; in the second, 10;
+  in the third, 15; and so on.
+  How many grains of rice were used in this tray?
+  """
+  """
+  # 5 rice grains in the first
+  # HACK 65*5 count the number of unit positions (black, white) 
+  # hack is bcz 5+5...so for each square add 5 so 65*5 is 64 squares. you can check it in the line 21
+  # 5 is the number of steps
+  """
+  s = witch_is_the_sum_of_term(range(5,65*5,5))
+  print(f'rice grains {s}')
 
 if __name__ == '__main__':
   callers()
