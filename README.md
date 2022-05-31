@@ -1,4 +1,17 @@
-### Languages & Tools 🛠
+
+<div align="left">
+    <a href="https://calendly.com/joaovictorcardoso/30min">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true"/>
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=99&theme=gotham"/>
+    </a>
+</div>
+<h1> Table of Awesome Contents</h1>
+
+- [Arithmetic Progression](https://github.com/jvcss/jvcss/blob/main/competitive_python/arithmetic_progression.py)
+- [Search](https://github.com/jvcss/jvcss/blob/main/competitive_python/search_algorithm.py)
+- [Sort](https://github.com/jvcss/jvcss/blob/main/competitive_python/sort_algorithm.py)
+
+<h1> Languages & Tools 🛠</h1>
 
 [![Golang](https://img.shields.io/badge/-Golang-05122A?style=flat&logo=go&logoColor=white)](https://github.com/jvcss)&nbsp;
 [![Javascript](https://img.shields.io/badge/-Javascript-05122A?style=flat&logo=javascript)](https://github.com/jvcss)&nbsp;
@@ -22,14 +35,8 @@
 [![Linux](https://img.shields.io/badge/-Linux-05122A?style=flat&logo=linux&logoColor=white)](https://github.com/jvcss)&nbsp;
 [![Windows](https://img.shields.io/badge/-Windows-05122A?style=flat&logo=windows&logoColor=white)](https://github.com/jvcss)&nbsp;
 
-<div align="left">
-    <a href="https://calendly.com/joaovictorcardoso/30min">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true"/>
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=99&theme=gotham"/>
-    </a>
-</div>
-<h1> Table of Awesome Contents</h1>
+<h1> Let's connect! 🎈</h1>
 
-- [Arithmetic Progression](https://github.com/jvcss/jvcss/blob/main/competitive_python/arithmetic_progression.py)
-- [Search](https://github.com/jvcss/jvcss/blob/main/competitive_python/search_algorithm.py)
-- [Sort](https://github.com/jvcss/jvcss/blob/main/competitive_python/sort_algorithm.py)
+<p align="left">
+<a href="https://www.linkedin.com/in/joao-victor-cardoso-a42410111/"><img src="https://img.shields.io/badge/-JVCSS-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
+<a href="https://twitter.com/jvictorcard"><img src="https://img.shields.io/badge/-@jvictorcard-%231DA1F2?style=flat&logo=twitter&logoColor=white"/></a>
