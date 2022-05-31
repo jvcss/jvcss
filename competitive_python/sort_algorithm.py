@@ -46,7 +46,7 @@ def OrderRoyalRoman(reis):
     #print(t_name)
     rei_comp = [t_name, romanToInt(t_gen)]
 
-    l_rei_comp = [t_name, t_gen]
+    #l_rei_comp = [t_name, t_gen]
 
     listas.append(rei_comp)
 
@@ -57,8 +57,10 @@ def OrderRoyalRoman(reis):
   print(out_list)
   return out_list
 
+
+
 def callers():
   OrderRoyalRoman(['Joao Victor IV', 'Ana II', 'Ana IV', 'Ana V','Ana CX','Abc V'])
 
-if __name__ = '__main__':
+if __name__ == '__main__':
   callers()
