@@ -42,7 +42,7 @@ def callers():
   #
   #
   qt_1_pt="""
-  Dado o conjunto dos números naturais, não nulos, qual é a soma dos seus 200 primeiros números pares?
+  Dado o conjunto dos números naturais, não nulos, qual é a soma dos seus 200 primeiros números pares?34851/634875
   """
   qt_1_en="""
   Given the set of nonzero natural numbers, what is the sum of your first 200 even numbers?
@@ -50,7 +50,7 @@ def callers():
   qt_1_explan_en="""
   # s=range(1,200,2) # list with first 200 even numbers
   """
-  print(f'witch is the sum of first 200 even numbers {s}'.format(witch_is_the_sum_of_term(range(2,401,2))))
+  print('witch is the sum of first 200 even numbers {}'.format(witch_is_the_sum_of_term(range(2,401,2))))
   
   qt_2_pt="""
   Com o intuito de construir um jogo novo, foram colocados sobre um tabuleiro de xadrez grãos de arroz da seguinte maneira: 
@@ -68,7 +68,7 @@ def callers():
   # hack is bcz 5+5...so for each square add 5 so 65*5 is 64 squares. you can check it in the line 21
   # 5 is the number of steps
   """
-  print(f'witch is the sum of rice grains {s}'.format(witch_is_the_sum_of_term(range(5,65*5,5))))
+  print('witch is the sum of rice grains {}'.format(witch_is_the_sum_of_term(range(5,65*5,5))))
 
   qt_3_pt="""
   (PUC/RJ – 2008) A soma de todos os números naturais ímpares de 3 algarismos é:
@@ -76,7 +76,7 @@ def callers():
   qt_3_en="""
   (PUC/RJ – 2008) The sum of all odd 3-digit natural numbers is:
   """
-  print(f'witch is the sum of all odd 3-digit {}'.format(witch_is_the_sum_of_term(range(101,1000,2))))
+  print('witch is the sum of all odd 3-digit {}'.format(witch_is_the_sum_of_term(range(101,1000,2))))
 
 if __name__ == '__main__':
   callers()
