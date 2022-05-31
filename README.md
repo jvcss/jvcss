@@ -20,11 +20,12 @@
 [![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=007ACC)](https://github.com/jvcss)&nbsp;
 
 [![Linux](https://img.shields.io/badge/-Linux-05122A?style=flat&logo=linux&logoColor=white)](https://github.com/jvcss)&nbsp;
+[![Windows](https://img.shields.io/badge/-Windows-05122A?style=flat&logo=windows&logoColor=white)](https://github.com/jvcss)&nbsp;
 
-<div align="center">
+<div align="left">
     <a href="https://calendly.com/joaovictorcardoso/30min">
     <img height="180em" src="https://github-readme-stats.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true"/>
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham"/>
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=99&theme=gotham"/>
     </a>
 </div>
 <h1> Table of Awesome Contents</h1>
