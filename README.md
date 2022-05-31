@@ -33,3 +33,9 @@
 - [Arithmetic Progression](https://github.com/jvcss/jvcss/blob/main/competitive_python/arithmetic_progression.py)
 - [Search](https://github.com/jvcss/jvcss/blob/main/competitive_python/search_algorithm.py)
 - [Sort](https://github.com/jvcss/jvcss/blob/main/competitive_python/sort_algorithm.py)
+
+### Let's connect ? 🤝
+
+<p align="left">
+<a href="https://www.linkedin.com/in/joao-victor-cardoso-a42410111/"><img src="https://img.shields.io/badge/-lucasdittrich-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
+<a href="https://twitter.com/jvictorcard"><img src="https://img.shields.io/badge/-@ld__dittrich-%231DA1F2?style=flat&logo=twitter&logoColor=white"/></a>
