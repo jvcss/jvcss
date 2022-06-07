@@ -40,6 +40,38 @@ CREATE TABLE autor_por_livro (
 --SELECT * FROM autor_por_livro
 --SELECT livro_id FROM autor_por_livro WHERE autor_id = 1
 
+/*
+SELECT
+    * -- seleciona o mesmo livro para vários autores
+FROM
+    autor
+WHERE
+    autor_id IN -- this can also be "NOT IN", "EXISTS, an operator like "=", "<", and others.
+    (
+    SELECT
+        autor_id
+    FROM
+        autor_por_livro
+    WHERE
+        livro_id = 2
+    )
+*/
+
+/*SELECT
+    * -- seleciona o mesmo autor para vários livros
+FROM
+    livro
+WHERE
+    livro_id IN -- this can also be "NOT IN", "EXISTS, an operator like "=", "<", and others.
+    (
+    SELECT
+        livro_id
+    FROM
+        autor_por_livro
+    WHERE
+        autor_id = 1
+    )*/
+
 
 
 
