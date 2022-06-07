@@ -1,3 +1,75 @@
+
+-- CREATE       -- DDL – Data Definition Language
+/*
+CREATE TABLE autor (
+  autor_id  serial PRIMARY KEY,
+  autor_nome VARCHAR NOT NULL
+);
+
+CREATE TABLE livro (
+  livro_id serial PRIMARY KEY,-- implicit primary key constraint
+  livro_nome VARCHAR NOT NULL,
+  autor_id int REFERENCES autor (autor_id) ON UPDATE CASCADE ON DELETE CASCADE
+  -- price numeric NOT NULL DEFAULT 0
+);
+
+CREATE TABLE autor_por_livro (
+  livro_id int REFERENCES livro (livro_id) ON UPDATE CASCADE,
+  autor_id int REFERENCES autor (autor_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  contagem_autores numeric NOT NULL DEFAULT 1,
+  CONSTRAINT autor_livro_pkey PRIMARY KEY (livro_id,autor_id)-- explicit pk
+);
+*/
+
+
+
+
+-- INSERT       -- DQl – Data Query Language
+
+--INSERT INTO autor (autor_nome) VALUES ('victor'),('andrezza')
+--INSERT INTO livro (livro_nome,autor_id) VALUES ('O Idiota',1), ('Pequeno Principe',1), ('O Processo',2)
+--INSERT INTO autor_por_livro (livro_id, autor_id) VALUES (1,1)(2,1)
+
+
+
+
+--SHOW       -- DML – Data Manipulation Language
+
+--SELECT * FROM autor
+--SELECT * FROM livro
+--SELECT * FROM autor_por_livro
+--SELECT livro_id FROM autor_por_livro WHERE autor_id = 1
+
+
+
+
+-- DCL – Data Control Language
+
+-- CLEAR 
+
+-- TRUNCATE TABLE autor_por_livro
+
+
+
+
+-- DELETE       
+
+/*
+DO $$ DECLARE
+    r RECORD;
+BEGIN
+    -- if the schema you operate on is not "current", you will want to
+    -- replace current_schema() in query with 'schematodeletetablesfrom'
+    -- *and* update the generate 'DROP...' accordingly.
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
+        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
+    END LOOP;
+END $$;
+*/
+
+
+-- DDL
+/*
 CREATE TABLE "livro" (
   "codigo_livro" SERIAL PRIMARY KEY,
   "livro_nome" varchar,
@@ -64,4 +136,4 @@ CREATE TABLE "dados"(
   "dado_endereco" varchar
 );
 
-
+*/
