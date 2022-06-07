@@ -56,13 +56,13 @@ CREATE TABLE autor_por_livro (
 
 /*
 DO $$ DECLARE
-    r RECORD;
+    rec RECORD;
 BEGIN
     -- if the schema you operate on is not "current", you will want to
     -- replace current_schema() in query with 'schematodeletetablesfrom'
     -- *and* update the generate 'DROP...' accordingly.
-    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
-        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
+    FOR rec IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
+        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(rec.tablename) || ' CASCADE';
     END LOOP;
 END $$;
 */
@@ -101,15 +101,15 @@ CREATE TABLE "areas_conhecimento" (
 
 CREATE TABLE "funcionarios" (
   "codigo_funcionario" SERIAL PRIMARY KEY,
-  "dados" varchar/*link to dados codigo_dados*/
+  "dados" varchar -- link to dados codigo_dados
 );
 CREATE TABLE "alunos" (
   "codigo_aluno" SERIAL PRIMARY KEY,
-  "dados" varchar/*link to dados codigo_dados*/
+  "dados" varchar -- link to dados codigo_dados
 );
 CREATE TABLE "professores" (
   "codigo_professor" SERIAL PRIMARY KEY,
-  "dados" varchar/*link to dados codigo_dados*/
+  "dados" varchar -- link to dados codigo_dados
 );
 CREATE TABLE "users" (
   "user_id" SERIAL PRIMARY KEY,
