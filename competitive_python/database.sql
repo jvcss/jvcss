@@ -1,18 +1,62 @@
-
+-- **********************************************
 -- CREATE       -- DDL – Data Definition Language
 /*
+CREATE TABLE "dados"(
+  "dados_id_user" SERIAL PRIMARY KEY,
+  "dado_nome" varchar,
+  "dado_telefone" varchar,
+  "dado_endereco" varchar
+);
+CREATE TABLE "usuario" (
+  "usuario_id" SERIAL PRIMARY KEY,
+  "tipo" varchar,--link um para vários, tipo pode ser id_funcionario/_aluno/_professor
+  "inicio_locacao_dia" date DEFAULT (now()),
+  "fim_locacao_dia" date DEFAULT (now()+ INTERVAL '7 DAY')
+);
+CREATE TABLE "areas_conhecimento" (
+  "codigo_area_conhecimento" SERIAL PRIMARY KEY,
+  "descricao_area" varchar
+);
+CREATE TABLE "funcionarios" (
+  "codigo_funcionario" SERIAL PRIMARY KEY,
+  "dados_id" varchar -- link para dados dados_id_user
+);
+CREATE TABLE "alunos" (
+  "codigo_aluno" SERIAL PRIMARY KEY,
+  "dados_id" varchar
+);
+CREATE TABLE "professores" (
+  "codigo_professor" SERIAL PRIMARY KEY,
+  "dados_id" varchar
+);
+
+CREATE TABLE "exemplares" (
+  "exemplar_id" SERIAL PRIMARY KEY,
+  "locador_id_usuario" varchar, -- link para usuario id
+  "exemplar_id_livro" varchar,
+  -- cada exemplar tem um id, para locar deve-se verificar o filtro de quantidades já locadas desse exemplar_id
+  "unidades" INTEGER
+);
+CREATE TABLE "editora" (
+  "id" SERIAL PRIMARY KEY,
+  --"titulos" varchar, -- editora tem uma tabela nova de livros, ou seja, só um filtro e não uma input
+  "dados_id" varchar
+);
+
 CREATE TABLE autor (
   autor_id  serial PRIMARY KEY,
-  autor_nome VARCHAR NOT NULL
+  dados_id VARCHAR -- CRIANDO UM dados_id associamos ao dados ID das tabela
+  -- isso permite consulta concatenada
 );
-
 CREATE TABLE livro (
-  livro_id serial PRIMARY KEY,-- implicit primary key constraint
+  livro_id serial PRIMARY KEY, -- implicit primary key constraint
   livro_nome VARCHAR NOT NULL,
   autor_id int REFERENCES autor (autor_id) ON UPDATE CASCADE ON DELETE CASCADE
-  -- price numeric NOT NULL DEFAULT 0
+  -- existe um autor principal, mas também é um filtro na tabela de relação autores por livros
+  editora_id int REFERENCES editora (autor_id) ON UPDATE CASCADE ON DELETE CASCADE
+  -- valor_monetario numeric NOT NULL DEFAULT 0
+  -- conteudo BLOB NOT NULL -- podemos salvar livros inteiros como imagens em um retrato e ir cortando blocos para fazer paginas 
 );
-
 CREATE TABLE autor_por_livro (
   livro_id int REFERENCES livro (livro_id) ON UPDATE CASCADE,
   autor_id int REFERENCES autor (autor_id) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -21,19 +65,20 @@ CREATE TABLE autor_por_livro (
 );
 */
 
+-- **********************************************
+-- DQL – Data Query Language
 
-
-
--- INSERT       -- DQl – Data Query Language
+--- INSERT
 
 --INSERT INTO autor (autor_nome) VALUES ('victor'),('andrezza')
 --INSERT INTO livro (livro_nome,autor_id) VALUES ('O Idiota',1), ('Pequeno Principe',1), ('O Processo',2)
 --INSERT INTO autor_por_livro (livro_id, autor_id) VALUES (1,1)(2,1)
 
 
+-- **********************************************
+-- DML – Data Manipulation Language
 
-
---SHOW       -- DML – Data Manipulation Language
+--- SHOW       
 
 --SELECT * FROM autor
 --SELECT * FROM livro
@@ -74,17 +119,14 @@ WHERE
 
 
 
-
+-- **********************************************
 -- DCL – Data Control Language
 
--- CLEAR 
+--- CLEAR 
 
 -- TRUNCATE TABLE autor_por_livro
 
-
-
-
--- DELETE       
+--- DELETE
 
 /*
 DO $$ DECLARE
@@ -97,75 +139,4 @@ BEGIN
         EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(rec.tablename) || ' CASCADE';
     END LOOP;
 END $$;
-*/
-
-
--- DDL
-/*
-CREATE TABLE "livro" (
-  "codigo_livro" SERIAL PRIMARY KEY,
-  "livro_nome" varchar,
-  "autores" varchar,
-  "editora" varchar,
-  "area_livro" varchar
-);
-CREATE TABLE "autores_por_livro"(
-  "livro" PRIMARY key REFERENCES livro ("codigo_livro") 
-)
-CREATE TABLE "autor" (
-  "codigo_autor" SERIAL PRIMARY KEY,
-  "livros" varchar,
-  "nome_autor" varchar,
-  "telefone_autor" varchar,
-  "endereco_autor" varchar
-);
-CREATE TABLE "editora" (
-  "id" SERIAL PRIMARY KEY,
-  "titulos" varchar,
-  "nome_editora" varchar,
-  "telefone_editora" varchar,
-  "endereco_editora" varchar
-);
-CREATE TABLE "areas_conhecimento" (
-  "codigo_area_conhecimento" SERIAL PRIMARY KEY,
-  "descricao_area" varchar
-);
-
-CREATE TABLE "funcionarios" (
-  "codigo_funcionario" SERIAL PRIMARY KEY,
-  "dados" varchar -- link to dados codigo_dados
-);
-CREATE TABLE "alunos" (
-  "codigo_aluno" SERIAL PRIMARY KEY,
-  "dados" varchar -- link to dados codigo_dados
-);
-CREATE TABLE "professores" (
-  "codigo_professor" SERIAL PRIMARY KEY,
-  "dados" varchar -- link to dados codigo_dados
-);
-CREATE TABLE "users" (
-  "user_id" SERIAL PRIMARY KEY,
-  "aluno" varchar,
-  "professor" varchar,
-  "funcionario" varchar
-);
-CREATE TABLE "usuario" (
-  "codigo" SERIAL PRIMARY KEY,
-  "tipo" varchar,
-  "inicio_locacao_dia" date DEFAULT (now()),
-  "fim_locacao_dia" date DEFAULT (now()+ INTERVAL '7 DAY')
-);
-CREATE TABLE "exemplares" (
-  "codigo_exemplar" SERIAL PRIMARY KEY,
-  "locador_user" varchar,
-  "exemplar" varchar,
-  "unidades" INTEGER
-);
-CREATE TABLE "dados"(
-  "codigo_dados" SERIAL PRIMARY KEY,
-  "dado_nome" varchar,
-  "dado_telefone" varchar,
-  "dado_endereco" varchar
-);
-
 */
