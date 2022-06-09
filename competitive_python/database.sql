@@ -103,6 +103,90 @@ CREATE TABLE autor_por_livro (
 |___|___________|_______________|______________|
 */
 
+-- INSERT       -- DQl – Data Query Language
+-- TESTE ISOLAOD PARA RELACAO DADOS professores,autor, funcionarios, alunos, editora
+
+WITH insDados AS (
+   INSERT INTO dados (dado_nome, dado_telefone, dado_endereco)
+   VALUES ('func Card', '21983', 'rua Mar')
+   RETURNING dados_id_user AS id_dados_user
+   )
+INSERT INTO funcionarios (dados_id_funcionarios)
+SELECT id_dados_user FROM insDados;
+
+WITH insDados AS (
+   INSERT INTO dados (dado_nome, dado_telefone, dado_endereco)
+   VALUES ('Eureka Books', '51975', 'rua 9')
+   RETURNING dados_id_user AS id_dados_user
+   )
+INSERT INTO editora (dados_id_editora)
+SELECT id_dados_user FROM insDados;
+
+WITH insDados AS (
+   INSERT INTO dados (dado_nome, dado_telefone, dado_endereco)
+   VALUES ('prof Santos', '43857', 'rua Nova')
+   RETURNING dados_id_user AS id_dados_user
+   )
+INSERT INTO professores (dados_id_professores)
+SELECT id_dados_user FROM insDados;
+
+WITH insDados AS (
+   INSERT INTO dados (dado_nome, dado_telefone, dado_endereco)
+   VALUES ('andr', '61998', 'rua branc')
+   RETURNING dados_id_user AS id_dados_user
+   )
+INSERT INTO autor (dados_id_autor)
+SELECT id_dados_user FROM insDados;
+
+WITH insDados AS (
+   INSERT INTO dados (dado_nome, dado_telefone, dado_endereco)
+   VALUES ('andr', '61998', 'rua branc')
+   RETURNING dados_id_user AS id_dados_user
+   )
+INSERT INTO alunos (dados_id_alunos)
+SELECT id_dados_user FROM insDados;
+
+WITH insDados AS (
+   INSERT INTO dados (dado_nome, dado_telefone, dado_endereco)
+   VALUES ('joao', '6298', 'rua asa')
+   RETURNING dados_id_user AS id_dados_user
+   )
+INSERT INTO autor (dados_id_autor)
+SELECT id_dados_user FROM insDados;
+
+INSERT INTO areas_conhecimento(descricao_area) VALUES ('Ficcao Cientifica')
+
+
+
+WITH data(livro_nome, autor_id, editora_id, livro_id_areas_conhecimento) AS (
+   VALUES 
+      ('O Idiota', 1,1,1)
+    , ('O Processo', 2,1,1)
+   )
+, insLivro AS (
+   INSERT INTO livro (livro_nome, autor_id, editora_id, livro_id_areas_conhecimento)
+   SELECT livro_nome, autor_id, editora_id, livro_id_areas_conhecimento
+   FROM data
+   RETURNING livro_id, autor_id
+   )
+-- INSERT INTO autor_por_livro(livro_id, autor_id)
+/*, insAutores as(
+  INSERT INTO autor_por_livro(livro_id, autor_id)
+  SELECT livro_id,autor_id from data
+)*/
+
+--- INSERT
+-- 
+/*WITH data(livro_id, autor_id) AS (
+   VALUES 
+      (1, 1)
+    , (1, 2)
+   )
+, insAutoresPorLivro AS (
+   INSERT INTO autor_por_livro (livro_id, autor_id)
+   SELECT livro_id, autor_id
+   FROM data
+   )*/
 
 -- **********************************************
 -- DML – Data Manipulation Language
