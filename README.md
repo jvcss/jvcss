@@ -7,9 +7,7 @@
 </div>
 <h1> Competitive Scripts</h1>
 
-- [📜Arithmetic Progression](https://github.com/jvcss/jvcss/blob/main/competitive_python/arithmetic_progression.py)
-- [📜Search Algorithm](https://github.com/jvcss/jvcss/blob/main/competitive_python/search_algorithm.py)
-- [📜Sort Algorithm](https://github.com/jvcss/jvcss/blob/main/competitive_python/sort_algorithm.py)
+- [📜Competitive Python3](https://github.com/jvcss/jvcss/competitive_python/)
 
 <h1> Technologies 🛠</h1>
 
@@ -21,12 +19,12 @@
 [![HTML](https://img.shields.io/badge/-HTML-05122A?style=flat&logo=html5)](https://github.com/jvcss/github-slideshow)&nbsp;
 [![CSS](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=CSS3)](https://github.com/jvcss/jvcss/netflix)&nbsp;
 [![Markdown](https://img.shields.io/badge/-Markdown-05122A?style=flat&logo=markdown)](https://github.com/jvcss/jvcss/resume-slideshow)&nbsp;
-<!--[![Docker](https://img.shields.io/badge/-Docker-05122A?style=flat&logo=docker)](https://github.com/jvcss/GoDocker)&nbsp;-->
+[![Docker](https://img.shields.io/badge/-Docker-05122A?style=flat&logo=docker)](https://github.com/jvcss/GoDocker)&nbsp;
 
 [![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)](https://github.com/jvcss)&nbsp;
 [![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)](https://github.com/jvcss)&nbsp;
-<!--[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions%20-05122A?style=flat&logo=github-actions&logoColor=white)](https://github.com/jvcss)&nbsp;-->
-<!--[![MySQL](https://img.shields.io/badge/-MySQL-05122A?style=flat&logo=mysql&logoColor=white)](https://github.com/jvcss/go/blob/master/models/base.go)&nbsp;-->
+[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions%20-05122A?style=flat&logo=github-actions&logoColor=white)](https://github.com/jvcss/go)&nbsp;
+[![MySQL](https://img.shields.io/badge/-MySQL-05122A?style=flat&logo=mysql&logoColor=white)](https://github.com/jvcss/go)&nbsp;
 
 [![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=007ACC)](https://github.com/jvcss)&nbsp;
 
