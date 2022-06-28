@@ -7,7 +7,7 @@
 </div>
 <h1> Competitive Scripts</h1>
 
-- [📜Competitive Python3](https://github.com/jvcss/jvcss/competitive_python/)
+- [📜Competitive Python3](https://github.com/jvcss/jvcss/tree/main/competitive_python)
 
 <h1> Technologies 🛠</h1>
 
