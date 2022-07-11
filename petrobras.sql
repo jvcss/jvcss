@@ -1,17 +1,17 @@
 CREATE TABLE dados (
   id_dados SERIAL PRIMARY KEY,
-  regiao_sigla varchar NOT NULL,
-  regiao_uf varchar NOT NULL,
-  municipio_nome varchar NOT NULL,
-  revendedora varchar NOT NULL,
-  cnpj varchar NOT NULL,
-  produto varchar NOT NULL,
-  data_coleta datetime NOT NULL,
-  valor_venda varchar,
-  valor_compra varchar,
-  unidade_de_medida varchar NOT NULL,
-  bandeira varchar NOT NULL,
-  crescimento_medio varchar NOT NULL
+  regiao_sigla VARCHAR NOT NULL,
+  regiao_uf VARCHAR NOT NULL,
+  municipio_nome VARCHAR NOT NULL,
+  revendedora VARCHAR NOT NULL,
+  cnpj VARCHAR NOT NULL,
+  produto VARCHAR NOT NULL,
+  data_coleta TIMESTAMP NOT NULL,
+  valor_venda VARCHAR,
+  valor_compra VARCHAR,
+  unidade_de_medida VARCHAR NOT NULL,
+  bandeira VARCHAR NOT NULL,
+  crescimento_medio VARCHAR NOT NULL
 );
 INSERT INTO dados (regiao_sigla, regiao_uf, municipio_nome, revendedora, cnpj, produto, data_coleta,valor_venda,valor_compra,unidade_de_medida,bandeira,crescimento_medio) VALUES('CO','DF','BRASILIA','AM COMERCIAL DE COMBUSTIVEIS LTDA','8215644000109','DIESEL S10','08/11/2018','3.879','nan','R$ / litro','PETROBRAS DISTRIBUIDORA S.A.','nan');
 INSERT INTO dados (regiao_sigla, regiao_uf, municipio_nome, revendedora, cnpj, produto, data_coleta,valor_venda,valor_compra,unidade_de_medida,bandeira,crescimento_medio) VALUES('CO','DF','BRASILIA','AM COMERCIAL DE COMBUSTIVEIS LTDA','8215644000109','DIESEL S10','13/12/2018','3.767','3.2929','R$ / litro','PETROBRAS DISTRIBUIDORA S.A.','-0.02887342098478992');
@@ -218,6 +218,3 @@ INSERT INTO dados (regiao_sigla, regiao_uf, municipio_nome, revendedora, cnpj, p
 --VALUES('123456', 
 --    (SELECT bandeira FROM bandeiras WHERE bandeira='PETROBRAS DISTRIBUIDORA S.A.')
 --);
---
---
---
