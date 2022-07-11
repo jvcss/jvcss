@@ -6,7 +6,7 @@ CREATE TABLE dados (
   revendedora VARCHAR NOT NULL,
   cnpj VARCHAR NOT NULL,
   produto VARCHAR NOT NULL,
-  data_coleta TIMESTAMP NOT NULL,
+  data_coleta DATE NOT NULL,
   valor_venda VARCHAR,
   valor_compra VARCHAR,
   unidade_de_medida VARCHAR NOT NULL,
