@@ -72,28 +72,3 @@ Web API,
 Web Design,
 UX Design,
 React,
-
-
-Sou joão victor
-
-tenho 26
-
-Moro com minha esposa, não tenho filhos mas minha esposa tem um filho de uma relação anterior e ele já tem seus 4 anos. Minha mãe é alguém presente na minha vida e mora na casa dela mesmo.
-
-Gosto de estudar programação e novidades da tecnologia e de competições em jogos de computador
-
-Já trabalhei na Tahto de agente backoffice até agente bilíngue
-
-Quero voltar principalmente porque a Tahto precisa de pessoas como eu que são 
-eloquentes e proeficientes e porque me sinto em casa performando as tarefas dentro da Tahto,
-inclusive porque nossas visões são semelhantes quanto ao atendimento aos nossos clientes
-e o uso de tecnologia para melhorar a vida de todos ao nosso redor.
-
-Faço faculdade de Engenharia de sofware agora no segundo ano na modalidade EAD 
-então com horarios bem flexiveis, sou formado como Técnico em Mecatrônica 
-mas o que eu gosto de fazer é trabalhar com software.
-
-Como ex funcionário sei dizer que é uma empresa comprometida em entregar
-resultados e tem oportunidade de crescimento e além disso tem uma maturidade fiscal
-que eu gosto e acredito ser correta e tem o principio da honestidade cultivado no cerne da empresa assim como eu
-Tenho disponibilidade total e preferência pela manhã/tarde.
