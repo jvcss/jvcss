@@ -1,17 +1,26 @@
 
-<div align="left">
+<div align="center">
     <a href="https://calendly.com/joaovictorcardoso/30min">
         <img height="180em" src="http://github-readme-stats-jvcss.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true"/>
         <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA"/>
-    </a>
+    </a> 
+</div>
+<div style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+    <h1 align="center"> Competitive Skills</h1>
+    <div style="display:flex; justify-content:center; ">
+            <div style="display:flex; flex-direction:column; align-items:center; margin-right:30px; padding:20px; background-color:#F0F0F0; border-radius:5px;">
+                <a href="https://github.com/jvcss/jvcss/tree/main/competitive_python" style="text-decoration:none;">
+                    <img style="height:50px; width:50px;object-fit: scale-down; " src="https://ouch-cdn2.icons8.com/bl9xOqdFsrPmb0M5HsMQp-6cGpZgx4VTtIFC2ZrCLh0/rs:fit:456:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjg2/LzdmMWM2NmVmLWM5/MzUtNDZkNy1hMWMz/LTcwYWFmYzA2MzEy/Zi5wbmc.png"/>
+                </a>
+                <h3 style="margin-top:10px;">Python</h3>
+            </div>
+        <!-- add more competitive scripts here -->
+    </div>
+        
 </div>
 
-<h1> Competitive Scripts</h1>
-
-- [📜Competitive Python3](https://github.com/jvcss/jvcss/tree/main/competitive_python)
-
-<h1> Technologies 🛠</h1>
-<table>
+<h1 align="center"> Technologies 🛠</h1>
+<table align="center">
     <tr>
         <tc>
             <td>
@@ -131,12 +140,13 @@
     </tr>
 </table>
 
-<h1> Let's connect! 🎈</h1>
+<h1 align="center"> Let's connect! 🎈</h1>
 
-<p align="left">
-<a href="https://www.linkedin.com/in/joao-victor-cardoso-a42410111/">
-<img src="https://img.shields.io/badge/-JVCSS-0077B5?style=flat&logo=Linkedin&logoColor=white"/>
-</a>
-<a href="https://twitter.com/jvictorcard">
-<img src="https://img.shields.io/badge/-@jvictorcard-%231DA1F2?style=flat&logo=twitter&logoColor=white"/>
-</a>
+<p align="center">
+    <a href="https://www.linkedin.com/in/joao-victor-cardoso-a42410111/">
+        <img src="https://img.shields.io/badge/-JVCSS-0077B5?style=flat&logo=Linkedin&logoColor=white"/>
+    </a>
+    <a href="https://twitter.com/jvictorcard">
+        <img src="https://img.shields.io/badge/-@jvictorcard-%231DA1F2?style=flat&logo=twitter&logoColor=white"/>
+    </a>
+</p>
