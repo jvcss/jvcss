@@ -1,6 +1,8 @@
 # João Victor Cardoso
 
-[LinkedIn](https://www.linkedin.com/in/joao-victor-cardoso-a42410111/) | [Twitter](https://twitter.com/jvictorcard) | [GitHub](https://github.com/jvcss) | [Schedule a Meeting](https://calendly.com/joaovictorcardoso/30min)
+| 🎉 | 🔍 | 🥂 | 🍰 | 🤝 |
+|-|-|-|-|-|
+|![Buy Me A Coffe Badge](https://img.shields.io/badge/Buy%20Me%20A%20Coffe-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)| [LinkedIn](https://www.linkedin.com/in/joao-victor-cardoso-a42410111/) | [Twitter](https://twitter.com/jvictorcard) | [GitHub](https://github.com/jvcss) | [Schedule a Meeting](https://calendly.com/joaovictorcardoso/30min)
 
 ## CI/CD Technologies 🚀
 
