@@ -1,4 +1,4 @@
-# João Victor Cardoso
+# [João Victor Cardoso](https://jvcss.github.io/)
 
 | 🎉 | 🔍 | 🥂 | 🍰 | 🤝 |
 |-|-|-|-|-|
@@ -35,9 +35,7 @@
 | Where I work | Sweetie Home |
 |-|-|
 | Being Addict in extensions | ![VS Code Badge](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=for-the-badge&logo=visual-studio-code&logoColor=007ACC) |
-| Being the Snow White to follow the Apple's fairy tale | ![XCode](https://img.shields.io/badge/XCode-05122A?logo=Apple&style=for-the-badge) |
-| As Toretto going from 0 to 100% of memory in 10s with this badboy | ![Android Studio](https://img.shields.io/badge/Android%20Studio-05122A?logo=Android&style=for-the-badge) |
-
+| Yes I'm automating deploy with 🍎 | ![XCode](https://img.shields.io/badge/XCode-05122A?logo=Apple&style=for-the-badge) |
 
 ## Stats 📈
 
@@ -46,6 +44,7 @@
         <img height="180em" src="http://github-readme-stats-jvcss.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true"/>
         <!--<img height="180em" src="http://github-readme-stats.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true"/>-->
         <img height="180em" src="https://github-readme-stats-jvcss.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS"/>
+        <!--<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS"/>-->
     </a>
 </div>
  
