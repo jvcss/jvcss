@@ -1,22 +1,33 @@
 # [João Victor Cardoso](https://jvcss.github.io/)
 
-| 🎉 | 🔍 | 🥂 | 🍰 | 🤝 |
-|-|-|-|-|-|
-|[![Buy Me A Coffe Badge](https://img.shields.io/badge/Buy%20Me%20A%20Coffe-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/jvcs) | [LinkedIn](https://www.linkedin.com/in/jvcss/) | [Twitter](https://twitter.com/jvictorcard) | [GitHub](https://github.com/jvcss) | [Schedule a Meeting](https://calendly.com/joaovictorcardoso/30min)
+<div align="center">
+    <table>
+  <tr>
+    <td align="center">🎉</td>
+    <td align="center">🔍</td>
+    <td align="center">🥂</td>
+    <td align="center">🍰</td>
+    <td align="center">🤝</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.buymeacoffee.com/jvcs"><img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffe-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white" alt="Buy Me A Coffe Badge"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/jvcss/">LinkedIn</a></td>
+    <td align="center"><a href="https://twitter.com/jvictorcard">Twitter</a></td>
+    <td align="center"><a href="https://github.com/jvcss">GitHub</a></td>
+    <td align="center"><a href="https://calendly.com/joaovictorcardoso/30min">Schedule a Meeting</a></td>
+  </tr>
+</table>
+</div>
 
 ## Stats 📈
 
 <div align="center">
     <a href="https://calendly.com/joaovictorcardoso/30min">
-        <img height="180em" src="http://github-readme-stats-jvcss.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true"/>
+        <img height="180em" src="http://github-readme-stats-jvcss.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true" onerror="this.src='https://raw.githubusercontent.com/jvcss/jvcss/main/resultados.png'"/>
+        <img height="180em" src="https://github-readme-stats-jvcss.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS" onerror="this.src='https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS'"/>
         <!--<img height="180em" src="http://github-readme-stats.vercel.app/api?username=jvcss&show_icons=true&theme=gotham&count_private=true&include_all_commits=true"/>-->
-        <img height="180em" src="https://github-readme-stats-jvcss.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS"/>
         <!--<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS"/>-->
     </a>
-</div>
- 
-<div align="center">
-  <img height="150" src="https://camo.githubusercontent.com/62da68eb62b1e5f175f7d1f0191dd89a653d7908feb22d37d4a0ab07365d6791/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f4d3967624264396e6244724f5475314d71782f67697068792e676966"  />
 </div>
 
 ###
