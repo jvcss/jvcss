@@ -1,4 +1,4 @@
-# [João Victor Cardoso](https://jvcss.github.io/)
+# [João Victor Cardoso](https://www.buymeacoffee.com/jvcs)
 
 <div align="center">
     <table>
