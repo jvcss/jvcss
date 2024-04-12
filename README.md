@@ -1,16 +1,14 @@
-# [João Victor Cardoso](https://www.buymeacoffee.com/jvcs)
+[![JVCSS](https://img.shields.io/badge/Buy%20Me%20A%20Coffe-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=green)](https://www.buymeacoffee.com/jvcs/)
 
 <div align="center">
     <table>
   <tr>
-    <td align="center">🎉</td>
     <td align="center">🔍</td>
     <td align="center">🥂</td>
     <td align="center">🍰</td>
     <td align="center">🤝</td>
   </tr>
   <tr>
-    <td align="center"><a href="https://www.buymeacoffee.com/jvcs"><img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffe-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white" alt="Buy Me A Coffe Badge"></a></td>
     <td align="center"><a href="https://www.linkedin.com/in/jvcss/">LinkedIn</a></td>
     <td align="center"><a href="https://twitter.com/jvictorcard">Twitter</a></td>
     <td align="center"><a href="https://github.com/jvcss">GitHub</a></td>
