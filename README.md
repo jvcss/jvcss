@@ -1,4 +1,4 @@
-# You can say thank you with a coffee [![JVCSS](https://img.shields.io/badge/Buy%20Me%20A%20Coffe-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=green)](https://www.buymeacoffee.com/jvcs/)
+# You can say thank you with a coffee [![JVCSS](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=green)](https://www.buymeacoffee.com/jvcs/)
 
 <div align="center">
     <table>
