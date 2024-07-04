@@ -46,7 +46,7 @@
 
 ###
 
-<p align="left">I'm João Victor from my mom to the world.<br><br>- 🔭 I’m working as software entrepreneur<br>- 📚 I'm currently learning LLM with Data Analysis<br>- ⚡ In my free time I try to understand how <a href="https://www.youtube.com/@_JohnHammond">John Hammond<a> makes software engineering for attackers and defenders seem so simple</p>
+<p align="left">I'm João Victor from Brazil.<br><br>- 🔭 I’m working as software entrepreneur<br>- 📚 I'm currently learning LLM with Data Analysis<br>- ⚡ In my free time I try to understand how <a href="https://www.youtube.com/@_JohnHammond">John Hammond<a> makes software engineering for attackers and defenders seem so simple</p>
 
 ###
 
