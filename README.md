@@ -65,7 +65,7 @@
   <img width="40" />
   <a href="https://github.com/jvcss/GoDocker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" height="40" alt="docker logo"  /></a>
   <img width="40" />
-  <a href="https://github.com/jvcss/Smart-Food/tree/main/smart_feeder"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="40" alt="django logo"  /></a>
+  <a href="https://github.com/jvcss/Smart-Food/tree/main/smart_feeder"><img src="https://icongr.am/devicon/django-line.svg?color=currentColor" height="40" alt="django logo"  /></a>
   <img width="40" />
   <a href="https://github.com/jvcss/AI-Crypto-Trader"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="40" alt="numpy logo"  /></a>
 </div>
