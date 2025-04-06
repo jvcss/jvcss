@@ -14,21 +14,19 @@ To obtain a software engineer position where I can utilize my skills in programm
 - In-depth knowledge of automation for AI
 
 ## Projects:
-- Profilecards.app: Developed a web application using Next.js framework and Firebase for real-time data storage and retrieval.
+- PyInstallerStreamlit : Developed a web application using Next.js framework and Firebase for real-time data storage and retrieval.
 
 - WeekNextStock.app: Implemented automation for an AI system to optimize the data processing and analysis pipeline.
 
 - Pixflix.app: Designed and implemented a UI/UX testing framework using Selenium and Cypress to improve the quality of the software.
 
 ## Certifications:
-- [Certification Name], [Issuing Organization]
+- Bachelor Degree in Software Engineering, IESB
 
-- [Certification Name], [Issuing Organization]
+- Mechatronics Technician, FATEC IB
 
 ## Professional Experience:
-- JVCSS, Software Engineer Intern, 5 years, CEO and CTO
-
-- [Company Name], Mechatronics Technician, [Duration], [Job Description]
+- JVCSS, Software Engineer Intern, 10 years, CEO and CTO.
 
 ## References:
 Available upon request.
