@@ -1,5 +1,3 @@
-# You can say thank you with a coffee [![JVCSS](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=green)](https://www.buymeacoffee.com/jvcs/)
-
 <div align="center">
     <table>
   <tr>
@@ -69,7 +67,7 @@
   <img width="40" />
   <a href="https://github.com/jvcss/AI-Crypto-Trader"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="40" alt="numpy logo"  /></a>
 </div>
-
+# [![JVCSS](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-05122A?style=for-the-badge&logo=buy-me-a-coffee&logoColor=green)](https://www.buymeacoffee.com/jvcs/)
 ###
 
 <h3 align="left">🔥   My Stats :</h3>
