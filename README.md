@@ -8,7 +8,6 @@
   </tr>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/jvcss/">LinkedIn</a></td>
-    <td align="center"><a href="https://twitter.com/jvictorcard">Twitter</a></td>
     <td align="center"><a href="https://github.com/jvcss">GitHub</a></td>
     <td align="center"><a href="https://calendly.com/joaovictorcardoso/30min">Schedule a Meeting</a></td>
   </tr>
