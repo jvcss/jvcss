@@ -4,7 +4,6 @@
     <td align="center">🔍</td>
     <td align="center">🥂</td>
     <td align="center">🍰</td>
-    <td align="center">🤝</td>
   </tr>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/jvcss/">LinkedIn</a></td>
