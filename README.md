@@ -14,11 +14,10 @@
 </div>
 
 ## Stats 📈
-
 <div align="center">
     <a href="https://calendly.com/joaovictorcardoso/30min">
-        <img height="180em" src="https://github-readme-stats.vercel.app/api?username=jvcss&theme=gotham" onerror="this.src=''"/>
-        <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS" onerror="this.src='https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS'"/>
+        <img height="180em" src="https://github-readme-stats-jvcss.vercel.app/api?username=jvcss&theme=gotham" onerror="this.src=''"/>
+        <img height="180em" src="https://github-readme-stats-jvcss.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS" onerror="this.src='https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS'"/>
     </a>
 </div>
 
