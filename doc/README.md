@@ -51,32 +51,32 @@ input[name="carousel"] {
   <div class="carousel-slide slides">
     <div class="carousel-item">
       <a href="https://github.com/jvcss/Smart-Food">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" height="400" width="64"  alt="flutter" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" height="40" width="64"  alt="flutter" />
       </a>
       <a href="https://github.com/jvcss/Smart-Food/tree/main/smart_food">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" height="400" width="64"  alt="android" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" height="40" width="64"  alt="android" />
       </a>
       <a href="">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" height="400" width="64"  alt="firebase" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" height="40" width="64"  alt="firebase" />
       </a>
     </div>
     <div class="carousel-item">
       <a href="https://github.com/jvcss/Postgres-Node-React-Jest-Actions">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="400" width="64"  alt="nodejs" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" width="64"  alt="nodejs" />
       </a>
       <a href="">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" height="400" width="64"  alt="aws" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" height="40" width="64"  alt="aws" />
       </a>
       <a href="https://github.com/jvcss/GoDocker">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" height="400" width="64" alt="docker" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" height="40" width="64" alt="docker" />
       </a>
     </div>
     <div class="carousel-item">
       <a href="https://github.com/jvcss/Smart-Food/tree/main/smart_feeder">
-        <img src="https://icongr.am/devicon/django-line.svg?color=currentColor" height="400" width="64" alt="django" />
+        <img src="https://icongr.am/devicon/django-line.svg?color=currentColor" height="40" width="64" alt="django" />
       </a>
       <a href="https://github.com/jvcss/AI-Crypto-Trader">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="400" alt="numpy" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="40" alt="numpy" />
       </a>
     </div>
   </div>
