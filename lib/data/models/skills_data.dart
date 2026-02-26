@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+import 'skill_model.dart';
+
+const List<Skill> kSkills = [
+  Skill(
+    id: 'planejamento',
+    title: 'PLANEJAMENTO',
+    impact: 'A criatividade de quem tem experiência',
+    domains: ['Arquitetura', 'DDD', 'Design Patterns'],
+    color: Color(0xFFAB47BC),
+    icon: Icons.architecture,
+  ),
+  Skill(
+    id: 'requisitos',
+    title: 'REQUISITOS',
+    impact: 'Transformando necessidades em soluções',
+    domains: ['Análise', 'User Stories', 'BDD'],
+    color: Color(0xFF42A5F5),
+    icon: Icons.list_alt,
+  ),
+  Skill(
+    id: 'frontend',
+    title: 'FRONTEND',
+    impact: 'Interfaces que encantam e convertem',
+    domains: ['Flutter', 'React', 'UX Design'],
+    color: Color(0xFF26C6DA),
+    icon: Icons.devices,
+  ),
+  Skill(
+    id: 'backend',
+    title: 'BACKEND',
+    impact: 'Sistemas que escalam sem travar',
+    domains: ['APIs REST', 'Clean Arch', 'SOLID'],
+    color: Color(0xFF66BB6A),
+    icon: Icons.storage,
+  ),
+  Skill(
+    id: 'servicos',
+    title: 'SERVIÇOS',
+    impact: 'Integrações que conectam o mundo',
+    domains: ['REST', 'GraphQL', 'Microservices'],
+    color: Color(0xFFFFCA28),
+    icon: Icons.cloud_queue,
+  ),
+  Skill(
+    id: 'publicacao',
+    title: 'PUBLICAÇÃO',
+    impact: 'Do código à produção com confiança',
+    domains: ['CI/CD', 'Docker', 'Cloud'],
+    color: Color(0xFFFFA726),
+    icon: Icons.rocket_launch,
+  ),
+  Skill(
+    id: 'automacao',
+    title: 'AUTOMAÇÃO',
+    impact: 'Robôs fazem, humanos decidem',
+    domains: ['GitHub Actions', 'Scripts', 'Testing'],
+    color: Color(0xFFEF5350),
+    icon: Icons.smart_toy,
+  ),
+  Skill(
+    id: 'analises',
+    title: 'ANÁLISES',
+    impact: 'Dados que contam histórias reais',
+    domains: ['Métricas', 'Observability', 'BI'],
+    color: Color(0xFFEC407A),
+    icon: Icons.analytics,
+  ),
+  Skill(
+    id: 'monetizacao',
+    title: 'MONETIZAÇÃO',
+    impact: 'Transformando valor em receita',
+    domains: ['SaaS', 'ROI', 'Pricing'],
+    color: Color(0xFF26A69A),
+    icon: Icons.trending_up,
+  ),
+];
