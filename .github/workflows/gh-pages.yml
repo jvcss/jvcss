@@ -34,7 +34,10 @@ jobs:
         run: flutter pub get
 
       - name: Build web
-        run: flutter build web --release --base-href /jvcss/
+        run: |
+          flutter build web --release --base-href /jvcss/ \
+            --dart-define=GHS_KEY=${{ secrets.GHS_KEY }} \
+            --dart-define=CLAUDE_KEY=${{ secrets.CLAUDE_KEY }}
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

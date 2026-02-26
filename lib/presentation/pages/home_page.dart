@@ -2,27 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../core/constants/app_colors.dart';
-import '../../data/models/skills_data.dart';
+import '../../data/models/ai_judgement_model.dart';
 import '../controllers/portfolio_controller.dart';
+import '../controllers/github_stats_provider.dart';
+import '../controllers/ai_judgement_provider.dart';
 import '../widgets/orbiting_spheres.dart';
 import '../widgets/skill_card.dart';
 import '../widgets/profile_reveal.dart';
+import '../widgets/github_chart.dart';
+import '../widgets/ai_judgement_card.dart';
+import '../../data/models/skills_data.dart';
 
-class HomePage extends ConsumerWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends ConsumerState<HomePage> {
+  bool _aiTriggered = false;
+
+  @override
+  Widget build(BuildContext context) {
     final phase = ref.watch(portfolioProvider);
-    final controller = ref.read(portfolioProvider.notifier);
+    final portfolioCtrl = ref.read(portfolioProvider.notifier);
+
+    // Dispara análise da IA quando entrar na fase aiAnalyzing
+    if (phase == PortfolioPhase.aiAnalyzing && !_aiTriggered) {
+      _aiTriggered = true;
+      final githubAsync = ref.read(githubStatsProvider);
+      final commits = githubAsync.valueOrNull?.recentCommitMessages ?? [];
+      Future.microtask(() async {
+        await ref.read(aiJudgementProvider.notifier).analyze(commits);
+        portfolioCtrl.markAiRevealed();
+      });
+    }
+
+    // Reset do trigger no restart
+    if (phase == PortfolioPhase.spheresOrbiting && _aiTriggered) {
+      _aiTriggered = false;
+    }
 
     return Scaffold(
       backgroundColor: kBackground,
       body: Stack(
         children: [
-          // Fundo estrelado
           const _StarBackground(),
-          // Conteúdo principal
           Center(
             child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 600),
@@ -30,21 +56,25 @@ class HomePage extends ConsumerWidget {
                 opacity: animation,
                 child: child,
               ),
-              child: _buildPhaseContent(context, phase),
+              child: _buildPhaseContent(phase),
             ),
           ),
-          // Botão de restart (canto inferior direito)
           Positioned(
             bottom: 24,
             right: 24,
-            child: _RestartButton(onPressed: controller.restart),
+            child: _RestartButton(
+              onPressed: () {
+                _aiTriggered = false;
+                portfolioCtrl.restart();
+              },
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildPhaseContent(BuildContext context, PortfolioPhase phase) {
+  Widget _buildPhaseContent(PortfolioPhase phase) {
     switch (phase) {
       case PortfolioPhase.spheresOrbiting:
         return const _Phase1Orbiting();
@@ -61,11 +91,19 @@ class HomePage extends ConsumerWidget {
         return const _Phase2NameReveal();
       case PortfolioPhase.profileRevealed:
         return const _Phase2ProfileFull();
+      case PortfolioPhase.githubLoading:
+        return const _Phase3Loading();
+      case PortfolioPhase.githubDisplayed:
+        return const _Phase3Chart();
+      case PortfolioPhase.aiAnalyzing:
+        return const _Phase4Analyzing();
+      case PortfolioPhase.aiRevealed:
+        return const _Phase4Revealed();
     }
   }
 }
 
-// ── FASE 1.1 – Esferas orbitando no centro ──────────────────────────────────
+// ── FASE 1.1 ─────────────────────────────────────────────────────────────────
 class _Phase1Orbiting extends StatelessWidget {
   const _Phase1Orbiting();
 
@@ -92,10 +130,7 @@ class _Phase1Orbiting extends StatelessWidget {
   }
 }
 
-// ── FASE 1.2 – Dispersão das esferas ─────────────────────────────────────────
-// Reutiliza OrbitingSpheres com estado 'scattering' por simplificação visual;
-// a transição real de posição será implementada via AnimatedPositioned na
-// home_page quando integrarmos as posições de destino do grid.
+// ── FASE 1.2 ─────────────────────────────────────────────────────────────────
 class _Phase1Scattering extends StatelessWidget {
   const _Phase1Scattering();
 
@@ -115,15 +150,12 @@ class _Phase1Scattering extends StatelessWidget {
   }
 }
 
-// ── FASE 1.3 + 1.4 – Cards das skills ───────────────────────────────────────
+// ── FASE 1.3 + 1.4 ───────────────────────────────────────────────────────────
 class _Phase1Cards extends StatelessWidget {
   const _Phase1Cards();
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isMobile = screenWidth < 600;
-
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       child: Column(
@@ -142,20 +174,17 @@ class _Phase1Cards extends StatelessWidget {
             runSpacing: 16,
             alignment: WrapAlignment.center,
             children: List.generate(kSkills.length, (i) {
-              return SkillCard(
-                skill: kSkills[i],
-                index: i,
-              );
+              return SkillCard(skill: kSkills[i], index: i);
             }),
           ),
-          if (!isMobile) const SizedBox(height: 32),
+          const SizedBox(height: 32),
         ],
       ),
     );
   }
 }
 
-// ── FASE 2.1 – Cards convergindo (transição visual simples) ──────────────────
+// ── FASE 2.1 ─────────────────────────────────────────────────────────────────
 class _Phase2Converging extends StatelessWidget {
   const _Phase2Converging();
 
@@ -175,45 +204,131 @@ class _Phase2Converging extends StatelessWidget {
   }
 }
 
-// ── FASE 2.2 – Esferas se fundindo ───────────────────────────────────────────
+// ── FASE 2.2 ─────────────────────────────────────────────────────────────────
 class _Phase2Merging extends StatelessWidget {
   const _Phase2Merging();
 
   @override
-  Widget build(BuildContext context) {
-    return const MergingSphere(key: ValueKey('merging'));
-  }
+  Widget build(BuildContext context) =>
+      const MergingSphere(key: ValueKey('merging'));
 }
 
-// ── FASE 2.3 – Revelação do nome ─────────────────────────────────────────────
+// ── FASE 2.3 ─────────────────────────────────────────────────────────────────
 class _Phase2NameReveal extends StatelessWidget {
   const _Phase2NameReveal();
 
   @override
   Widget build(BuildContext context) {
-    return ProfileReveal(
-      key: const ValueKey('nameReveal'),
+    return const ProfileReveal(
+      key: ValueKey('nameReveal'),
       nameVisible: true,
       photoVisible: false,
     );
   }
 }
 
-// ── FASE 2.4 – Perfil completo ───────────────────────────────────────────────
+// ── FASE 2.4 ─────────────────────────────────────────────────────────────────
 class _Phase2ProfileFull extends StatelessWidget {
   const _Phase2ProfileFull();
 
   @override
   Widget build(BuildContext context) {
-    return ProfileReveal(
-      key: const ValueKey('profileFull'),
+    return const ProfileReveal(
+      key: ValueKey('profileFull'),
       nameVisible: true,
       photoVisible: true,
     );
   }
 }
 
+// ── FASE 3: Loading ──────────────────────────────────────────────────────────
+class _Phase3Loading extends ConsumerWidget {
+  const _Phase3Loading();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    // Inicia o fetch do GitHub assim que esta fase aparece
+    ref.watch(githubStatsProvider);
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const CircularProgressIndicator(
+          color: Color(0xFF42A5F5),
+          strokeWidth: 2,
+        ).animate().fadeIn(),
+        const SizedBox(height: 20),
+        Text(
+          'Analisando GitHub...',
+          style: Theme.of(context).textTheme.bodySmall,
+        ).animate().fadeIn(delay: const Duration(milliseconds: 200)),
+      ],
+    );
+  }
+}
+
+// ── FASE 3: Chart ────────────────────────────────────────────────────────────
+class _Phase3Chart extends ConsumerWidget {
+  const _Phase3Chart();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final statsAsync = ref.watch(githubStatsProvider);
+    return statsAsync.when(
+      loading: () => const _Phase3Loading(),
+      error: (e, _) => _ErrorView(message: e.toString()),
+      data: (stats) => GitHubChart(
+        key: const ValueKey('githubChart'),
+        stats: stats,
+      ),
+    );
+  }
+}
+
+// ── FASE 4: Analisando ───────────────────────────────────────────────────────
+class _Phase4Analyzing extends ConsumerWidget {
+  const _Phase4Analyzing();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return AiJudgementCard(
+      key: const ValueKey('aiAnalyzing'),
+      judgement: const AiJudgement(isLoading: true),
+    );
+  }
+}
+
+// ── FASE 4: Revelado ─────────────────────────────────────────────────────────
+class _Phase4Revealed extends ConsumerWidget {
+  const _Phase4Revealed();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final judgement = ref.watch(aiJudgementProvider);
+    return AiJudgementCard(
+      key: const ValueKey('aiRevealed'),
+      judgement: judgement,
+    );
+  }
+}
+
 // ── Componentes auxiliares ───────────────────────────────────────────────────
+
+class _ErrorView extends StatelessWidget {
+  final String message;
+  const _ErrorView({required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const Icon(Icons.error_outline, color: Color(0xFFEF5350), size: 40),
+        const SizedBox(height: 12),
+        Text(message, style: Theme.of(context).textTheme.bodySmall),
+      ],
+    );
+  }
+}
 
 class _RestartButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -251,7 +366,6 @@ class _StarBackground extends StatelessWidget {
 }
 
 class _StarsPainter extends CustomPainter {
-  // Estrelas geradas deterministicamente para evitar rebuilds
   static final List<Offset> _positions = List.generate(80, (i) {
     final x = (i * 137.508) % 1.0;
     final y = (i * 97.314 + 0.5) % 1.0;

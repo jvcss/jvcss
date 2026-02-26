@@ -3,14 +3,22 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/animation_constants.dart';
 
 enum PortfolioPhase {
+  // Fase 1: Skills
   spheresOrbiting,
   spheresScattering,
   cardsAppearing,
   cardsDisplayed,
+  // Fase 2: Identidade
   cardsConverging,
   spheresMerging,
   nameRevealing,
   profileRevealed,
+  // Fase 3: GitHub
+  githubLoading,
+  githubDisplayed,
+  // Fase 4: IA
+  aiAnalyzing,
+  aiRevealed,
 }
 
 class PortfolioController extends StateNotifier<PortfolioPhase> {
@@ -48,6 +56,27 @@ class PortfolioController extends StateNotifier<PortfolioPhase> {
     _timers.add(Timer(AnimDelay.profileRevealStart, () {
       if (mounted) state = PortfolioPhase.profileRevealed;
     }));
+
+    // Fase 3: GitHub (16s após inicio)
+    _timers.add(Timer(const Duration(seconds: 16), () {
+      if (mounted) state = PortfolioPhase.githubLoading;
+    }));
+
+    _timers.add(Timer(const Duration(seconds: 19), () {
+      if (mounted) state = PortfolioPhase.githubDisplayed;
+    }));
+
+    // Fase 4: IA (23s após inicio)
+    _timers.add(Timer(const Duration(seconds: 23), () {
+      if (mounted) state = PortfolioPhase.aiAnalyzing;
+    }));
+  }
+
+  /// Chamado pela home_page quando a resposta da IA chegar.
+  void markAiRevealed() {
+    if (mounted && state == PortfolioPhase.aiAnalyzing) {
+      state = PortfolioPhase.aiRevealed;
+    }
   }
 
   void restart() {
