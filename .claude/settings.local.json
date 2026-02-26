@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config -l)",
+      "Bash(dart --version)",
+      "Bash(dart pub global activate dart_mcp_server)",
+      "Bash(dart pub global list)",
+      "Bash(claude mcp add --transport stdio dart -- dart mcp-server)",
+      "Bash(claude mcp list)"
+    ]
+  }
+}
