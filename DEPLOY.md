@@ -1,85 +1,82 @@
-# GitHub Pages Deploy — Guia Completo para jvcss.github.io
+# GitHub Pages Deploy — Guia Completo para jvcss.github.io/jvcss/
 
-## 1. O Problema Atual
+## 1. Como o GitHub Pages Funciona — Dois Tipos de Repo
 
-O site está sendo servido em `https://jvcss.github.io/jvcss` ao invés de `https://jvcss.github.io`.
+O GitHub Pages tem dois tipos de publicação com comportamentos fundamentalmente diferentes:
 
-### Por que isso acontece?
+### User/Org Pages — exige repo com nome especial
 
-O GitHub Pages tem **dois modos de operação** com comportamentos completamente diferentes:
+| Repo necessário | URL resultante |
+|-----------------|----------------|
+| `jvcss/jvcss.github.io` | `https://jvcss.github.io/` |
 
-| Modo | URL resultante | Repo necessário |
-|------|---------------|-----------------|
-| **User/Org Page** | `https://username.github.io` | `username/username` ou `username/username.github.io` |
-| **Project Page** | `https://username.github.io/repo-name` | qualquer outro repo |
+Para ter o site na raiz do domínio `https://jvcss.github.io`, é **obrigatório** criar um repositório com o nome exato `jvcss.github.io`. Este repo é exclusivo para essa finalidade.
 
-O repositório `jvcss/jvcss` se qualifica como **User Page** — o nome do repo (`jvcss`) bate com o username (`jvcss`). Portanto, o URL correto É `https://jvcss.github.io`, sem nenhum sufixo.
+### Project Pages — qualquer outro repo
 
-O sufixo `/jvcss` aparece quando o GitHub Pages está configurado no modo errado, ou quando o build do Flutter foi feito com `--base-href /jvcss/` ao invés de `--base-href /`.
+| Repo | URL resultante |
+|------|----------------|
+| `jvcss/jvcss` | `https://jvcss.github.io/jvcss/` |
+| `jvcss/portfolio` | `https://jvcss.github.io/portfolio/` |
+| `jvcss/blog` | `https://jvcss.github.io/blog/` |
 
----
-
-## 2. As Duas Abordagens de Deploy
-
-### Abordagem A — Branch `gh-pages` (antiga / MkDocs legado)
-
-```
-[push para main]
-     │
-     ▼
-[GitHub Actions]
-     │  flutter build web
-     │  base-href = /
-     ▼
-[JamesIves/github-pages-deploy-action]
-     │  faz push do build/web
-     ▼
-[branch gh-pages] ← GitHub Pages serve DAQUI
-```
-
-**Configuração no GitHub:**
-> Settings → Pages → Source: **Deploy from a branch** → Branch: `gh-pages`
-
-**Problema com esta abordagem:**
-- Cria uma branch extra (`gh-pages`) que não tem relação com o código fonte
-- Depende de uma GitHub Action de terceiro para fazer o push
-- O token `GITHUB_TOKEN` precisa de permissão de escrita no repo
-- Em repos de User Page, pode haver conflito entre o que está em `main` e o que está em `gh-pages`
-- **Mais difícil de debugar** quando o deploy falha silenciosamente
+Todo repo que não seja `username.github.io` serve como **project page** com o nome do repo como subpath.
 
 ---
 
-### Abordagem B — GitHub Actions Pages nativo (moderna / recomendada)
+## 2. O Repo `jvcss/jvcss` — Profile README, não User Page
 
-```
-[push para main]
-     │
-     ▼
-[GitHub Actions]
-     │  flutter build web
-     │  base-href = /
-     │
-     ├─► actions/configure-pages
-     ├─► actions/upload-pages-artifact  ← sobe o build/web como artefato
-     └─► actions/deploy-pages           ← GitHub faz o deploy direto
-                                              sem branch intermediária
-```
+O repo `jvcss/jvcss` é um **repo especial do GitHub** com uma funcionalidade distinta: ele exibe o `README.md` na página de perfil do usuário (`github.com/jvcss`). Esse é o chamado **Profile README**.
 
-**Configuração no GitHub:**
-> Settings → Pages → Source: **GitHub Actions**
+Ele NÃO é o mesmo que o repo de User Pages. São features completamente separadas:
 
-**Por que é melhor:**
-- Sem branch `gh-pages` desnecessária
-- O deploy é feito pela própria infraestrutura do GitHub (mais confiável)
-- Permissões granulares declaradas no próprio workflow (`pages: write`, `id-token: write`)
-- URL do deploy aparece como output do job (`${{ steps.deployment.outputs.page_url }}`)
-- **É a abordagem oficial atual do GitHub** — toda a nova documentação usa esta
+| Feature | Repo | Efeito |
+|---------|------|--------|
+| Profile README | `jvcss/jvcss` | Exibe README em `github.com/jvcss` |
+| User Pages | `jvcss/jvcss.github.io` | Publica site em `https://jvcss.github.io/` |
+
+Ambos podem existir ao mesmo tempo, com funções diferentes.
 
 ---
 
-## 3. A Correção — Workflow Atualizado
+## 3. Situação Atual — Project Page em `/jvcss/`
 
-O arquivo `.github/workflows/gh-pages.yml` deve ser:
+Por não existir o repo `jvcss.github.io`, o site do portfolio fica em:
+
+**`https://jvcss.github.io/jvcss/`**
+
+Esta é a URL correta, definitiva e obrigatória para o repo `jvcss/jvcss` enquanto não houver o repo separado.
+
+---
+
+## 4. Por que o `--base-href /jvcss/` é Crítico
+
+O Flutter Web gera um `index.html` com uma tag `<base href="...">` que define o prefixo de todos os assets (JS, CSS, fontes, imagens). Se esse valor não bater com o subpath real onde o site está hospedado, todos os assets retornam 404.
+
+```html
+<!-- Com --base-href /jvcss/ (correto) -->
+<base href="/jvcss/">
+<!-- Carrega: https://jvcss.github.io/jvcss/flutter.js ✅ -->
+
+<!-- Com --base-href / (incorreto para project page) -->
+<base href="/">
+<!-- Busca: https://jvcss.github.io/flutter.js → 404 ❌ -->
+```
+
+**Regra geral:**
+
+| Tipo de página | Valor correto de `--base-href` |
+|----------------|-------------------------------|
+| User Page (`username.github.io`) | `--base-href /` |
+| Project Page (`username/repo`) | `--base-href /nome-do-repo/` |
+
+Para este projeto: `--base-href /jvcss/`
+
+---
+
+## 5. Workflow Atual — GitHub Actions Pages Nativo
+
+O arquivo `.github/workflows/gh-pages.yml` usa a abordagem oficial do GitHub:
 
 ```yaml
 name: Deploy Flutter Web
@@ -118,7 +115,7 @@ jobs:
         run: flutter pub get
 
       - name: Build web
-        run: flutter build web --release --base-href /
+        run: flutter build web --release --base-href /jvcss/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -133,65 +130,24 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-**Pontos chave do workflow:**
+### Por que GitHub Actions Pages nativo (não branch `gh-pages`)
 
-| Campo | Valor | Motivo |
-|-------|-------|--------|
-| `permissions.pages: write` | declarado no topo | necessário para fazer deploy |
-| `permissions.id-token: write` | declarado no topo | autenticação OIDC do GitHub |
-| `environment.name: github-pages` | obrigatório | vincula ao environment de Pages |
-| `--base-href /` | raiz | User Page serve na raiz, sem subfixo |
-| `actions/configure-pages@v5` | configura o environment | detecta URL base automaticamente |
-| `actions/upload-pages-artifact@v3` | faz upload do `build/web` | prepara o artefato para deploy |
-| `actions/deploy-pages@v4` | efetua o deploy | usa a infraestrutura nativa do GitHub |
+- Sem branch intermediária (`gh-pages`) com conteúdo gerado
+- Deploy feito pela infraestrutura nativa do GitHub (mais confiável)
+- Permissões declaradas explicitamente no workflow
+- URL do deploy exibida no log do Actions
 
----
+### Configuração necessária no GitHub (feita uma única vez)
 
-## 4. Passo a Passo para Corrigir
-
-### Passo 1 — Alterar configuração no GitHub (manual, uma única vez)
-
-1. Acesse: `https://github.com/jvcss/jvcss/settings/pages`
-2. Em **"Build and deployment"**, altere **"Source"** de `Deploy from a branch` para **`GitHub Actions`**
-3. Salve. O campo de branch desaparece — não é mais necessário.
-
-### Passo 2 — O workflow já foi atualizado
-
-O arquivo `.github/workflows/gh-pages.yml` já foi atualizado neste commit.
-
-### Passo 3 — Push aciona o workflow
-
-Qualquer push para `main` vai:
-1. Build Flutter Web com `--base-href /`
-2. Fazer upload do `build/web` como artifact
-3. Fazer deploy direto via GitHub Pages nativo
-4. Exibir a URL do deploy no log do Actions
+> Settings → Pages → Build and deployment → Source: **GitHub Actions**
 
 ---
 
-## 5. Verificação
+## 6. Verificação do Deploy
 
-Após a mudança nas configurações e o próximo push:
+Após cada push para `main`:
 
-- URL correta: `https://jvcss.github.io` (sem `/jvcss`)
-- GitHub Actions log mostrará: `🚀 Deployed to https://jvcss.github.io`
-- Aba "Environments" no repo mostrará `github-pages` como environment ativo
-
----
-
-## 6. Por que o `--base-href /` é crítico para Flutter Web
-
-O Flutter Web gera referências a assets (JS, CSS, fontes) usando o `base-href` como prefixo.
-
-```html
-<!-- Com --base-href / (correto para User Page) -->
-<base href="/">
-<!-- Carrega: https://jvcss.github.io/flutter.js ✅ -->
-
-<!-- Com --base-href /jvcss/ (errado para User Page) -->
-<base href="/jvcss/">
-<!-- Carrega: https://jvcss.github.io/jvcss/flutter.js ❌ (404 em User Page) -->
-```
-
-Para **User Pages** (`username/username`): sempre usar `--base-href /`
-Para **Project Pages** (`username/outro-repo`): usar `--base-href /nome-do-repo/`
+1. Acompanhar em: `https://github.com/jvcss/jvcss/actions`
+2. Site disponível em: `https://jvcss.github.io/jvcss/`
+3. Sem erros 404 no console do browser
+4. Assets carregados: `flutter_bootstrap.js`, `main.dart.js`, `manifest.json`
