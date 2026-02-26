@@ -16,8 +16,10 @@
 ## Stats 📈
 <div align="center">
     <a href="https://calendly.com/joaovictorcardoso/30min">
-        <img height="180em" src="https://github-readme-stats.vercel.app/api?username=jvcss&theme=gotham" onerror="this.src=''"/>
-        <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS,Blade" onerror="this.src=''"/>
+        <img height="180em" src="https://github-readme-stats-two-tau-87.vercel.app
+/api?username=jvcss&theme=gotham" onerror="this.src=''"/>
+        <img height="180em" src="https://github-readme-stats-two-tau-87.vercel.app
+/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS,Blade" onerror="this.src=''"/>
     </a>
 </div>
 
@@ -73,6 +75,6 @@
 ###
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=jvcss&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph"  />
+  <img src="https://github-readme-streak-stats-livid-seven.vercel.app?user=jvcss&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph"  />
 </div>
 
