@@ -16,10 +16,8 @@
 ## Stats 📈
 <div align="center">
     <a href="https://calendly.com/joaovictorcardoso/30min">
-        <img height="180em" src="https://github-readme-stats-two-tau-87.vercel.app
-/api?username=jvcss&theme=gotham" onerror="this.src=''"/>
-        <img height="180em" src="https://github-readme-stats-two-tau-87.vercel.app
-/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS,Blade" onerror="this.src=''"/>
+        <img height="180em" src="https://github-readme-stats-two-tau-87.vercel.app/api?username=jvcss&theme=gotham" onerror="this.src=''"/>
+        <img height="180em" src="https://github-readme-stats-two-tau-87.vercel.app/api/top-langs/?username=jvcss&layout=compact&langs_count=6&theme=gotham&hide=VBA,HTML,CSS,TEX,SCSS,Blade" onerror="this.src=''"/>
     </a>
 </div>
 
