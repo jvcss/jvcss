@@ -13,12 +13,8 @@ enum PortfolioPhase {
   spheresMerging,
   nameRevealing,
   profileRevealed,
-  // Fase 3: GitHub
-  githubLoading,
-  githubDisplayed,
-  // Fase 4: IA
-  aiAnalyzing,
-  aiRevealed,
+  // Fase Final: Dashboard persistente
+  finalDashboard,
 }
 
 class PortfolioController extends StateNotifier<PortfolioPhase> {
@@ -57,26 +53,9 @@ class PortfolioController extends StateNotifier<PortfolioPhase> {
       if (mounted) state = PortfolioPhase.profileRevealed;
     }));
 
-    // Fase 3: GitHub (16s após inicio)
-    _timers.add(Timer(const Duration(seconds: 16), () {
-      if (mounted) state = PortfolioPhase.githubLoading;
+    _timers.add(Timer(AnimDelay.finalDashboardStart, () {
+      if (mounted) state = PortfolioPhase.finalDashboard;
     }));
-
-    _timers.add(Timer(const Duration(seconds: 19), () {
-      if (mounted) state = PortfolioPhase.githubDisplayed;
-    }));
-
-    // Fase 4: IA (23s após inicio)
-    _timers.add(Timer(const Duration(seconds: 23), () {
-      if (mounted) state = PortfolioPhase.aiAnalyzing;
-    }));
-  }
-
-  /// Chamado pela home_page quando a resposta da IA chegar.
-  void markAiRevealed() {
-    if (mounted && state == PortfolioPhase.aiAnalyzing) {
-      state = PortfolioPhase.aiRevealed;
-    }
   }
 
   void restart() {

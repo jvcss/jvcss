@@ -6,9 +6,6 @@ class AiRepository {
   AiRepository(this._service);
 
   Future<String> judgeProfile(List<String> commitMessages) async {
-    if (commitMessages.isEmpty) {
-      return 'Nenhum commit encontrado para análise.';
-    }
     return _service.analyzeCommits(commitMessages);
   }
 }

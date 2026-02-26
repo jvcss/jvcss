@@ -14,6 +14,10 @@ class ClaudeService {
       return AiJudgement.mock.text;
     }
 
+    if (commitMessages.isEmpty) {
+      return 'Nenhum commit encontrado para análise.';
+    }
+
     final prompt = _buildPrompt(commitMessages);
 
     final response = await http.post(

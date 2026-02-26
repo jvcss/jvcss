@@ -2,15 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../core/constants/app_colors.dart';
-import '../../data/models/ai_judgement_model.dart';
 import '../controllers/portfolio_controller.dart';
-import '../controllers/github_stats_provider.dart';
-import '../controllers/ai_judgement_provider.dart';
 import '../widgets/orbiting_spheres.dart';
 import '../widgets/skill_card.dart';
 import '../widgets/profile_reveal.dart';
-import '../widgets/github_chart.dart';
-import '../widgets/ai_judgement_card.dart';
+import '../widgets/final_dashboard.dart';
 import '../../data/models/skills_data.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -21,28 +17,10 @@ class HomePage extends ConsumerStatefulWidget {
 }
 
 class _HomePageState extends ConsumerState<HomePage> {
-  bool _aiTriggered = false;
-
   @override
   Widget build(BuildContext context) {
     final phase = ref.watch(portfolioProvider);
     final portfolioCtrl = ref.read(portfolioProvider.notifier);
-
-    // Dispara análise da IA quando entrar na fase aiAnalyzing
-    if (phase == PortfolioPhase.aiAnalyzing && !_aiTriggered) {
-      _aiTriggered = true;
-      final githubAsync = ref.read(githubStatsProvider);
-      final commits = githubAsync.valueOrNull?.recentCommitMessages ?? [];
-      Future.microtask(() async {
-        await ref.read(aiJudgementProvider.notifier).analyze(commits);
-        portfolioCtrl.markAiRevealed();
-      });
-    }
-
-    // Reset do trigger no restart
-    if (phase == PortfolioPhase.spheresOrbiting && _aiTriggered) {
-      _aiTriggered = false;
-    }
 
     return Scaffold(
       backgroundColor: kBackground,
@@ -63,10 +41,7 @@ class _HomePageState extends ConsumerState<HomePage> {
             bottom: 24,
             right: 24,
             child: _RestartButton(
-              onPressed: () {
-                _aiTriggered = false;
-                portfolioCtrl.restart();
-              },
+              onPressed: () => portfolioCtrl.restart(),
             ),
           ),
         ],
@@ -91,14 +66,8 @@ class _HomePageState extends ConsumerState<HomePage> {
         return const _Phase2NameReveal();
       case PortfolioPhase.profileRevealed:
         return const _Phase2ProfileFull();
-      case PortfolioPhase.githubLoading:
-        return const _Phase3Loading();
-      case PortfolioPhase.githubDisplayed:
-        return const _Phase3Chart();
-      case PortfolioPhase.aiAnalyzing:
-        return const _Phase4Analyzing();
-      case PortfolioPhase.aiRevealed:
-        return const _Phase4Revealed();
+      case PortfolioPhase.finalDashboard:
+        return const FinalDashboard();
     }
   }
 }
@@ -241,94 +210,7 @@ class _Phase2ProfileFull extends StatelessWidget {
   }
 }
 
-// ── FASE 3: Loading ──────────────────────────────────────────────────────────
-class _Phase3Loading extends ConsumerWidget {
-  const _Phase3Loading();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // Inicia o fetch do GitHub assim que esta fase aparece
-    ref.watch(githubStatsProvider);
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        const CircularProgressIndicator(
-          color: Color(0xFF42A5F5),
-          strokeWidth: 2,
-        ).animate().fadeIn(),
-        const SizedBox(height: 20),
-        Text(
-          'Analisando GitHub...',
-          style: Theme.of(context).textTheme.bodySmall,
-        ).animate().fadeIn(delay: const Duration(milliseconds: 200)),
-      ],
-    );
-  }
-}
-
-// ── FASE 3: Chart ────────────────────────────────────────────────────────────
-class _Phase3Chart extends ConsumerWidget {
-  const _Phase3Chart();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final statsAsync = ref.watch(githubStatsProvider);
-    return statsAsync.when(
-      loading: () => const _Phase3Loading(),
-      error: (e, _) => _ErrorView(message: e.toString()),
-      data: (stats) => GitHubChart(
-        key: const ValueKey('githubChart'),
-        stats: stats,
-      ),
-    );
-  }
-}
-
-// ── FASE 4: Analisando ───────────────────────────────────────────────────────
-class _Phase4Analyzing extends ConsumerWidget {
-  const _Phase4Analyzing();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return AiJudgementCard(
-      key: const ValueKey('aiAnalyzing'),
-      judgement: const AiJudgement(isLoading: true),
-    );
-  }
-}
-
-// ── FASE 4: Revelado ─────────────────────────────────────────────────────────
-class _Phase4Revealed extends ConsumerWidget {
-  const _Phase4Revealed();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final judgement = ref.watch(aiJudgementProvider);
-    return AiJudgementCard(
-      key: const ValueKey('aiRevealed'),
-      judgement: judgement,
-    );
-  }
-}
-
 // ── Componentes auxiliares ───────────────────────────────────────────────────
-
-class _ErrorView extends StatelessWidget {
-  final String message;
-  const _ErrorView({required this.message});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        const Icon(Icons.error_outline, color: Color(0xFFEF5350), size: 40),
-        const SizedBox(height: 12),
-        Text(message, style: Theme.of(context).textTheme.bodySmall),
-      ],
-    );
-  }
-}
 
 class _RestartButton extends StatelessWidget {
   final VoidCallback onPressed;

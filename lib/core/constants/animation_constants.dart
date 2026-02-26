@@ -29,4 +29,5 @@ class AnimDelay {
   static const sphereMergeStart = Duration(seconds: 12);
   static const nameRevealStart = Duration(seconds: 13);
   static const profileRevealStart = Duration(seconds: 14);
+  static const finalDashboardStart = Duration(seconds: 16);
 }
