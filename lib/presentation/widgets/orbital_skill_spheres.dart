@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../data/models/skills_data.dart';
@@ -25,6 +27,9 @@ class _OrbitalSkillSpheresState extends State<OrbitalSkillSpheres>
   late AnimationController _rotController;
   int? _hoveredIndex;
   double? _frozenValue;
+  int? _closingIndex;
+  double? _closingFrozenValue;
+  Timer? _closingTimer;
 
   @override
   void initState() {
@@ -37,6 +42,7 @@ class _OrbitalSkillSpheresState extends State<OrbitalSkillSpheres>
 
   @override
   void dispose() {
+    _closingTimer?.cancel();
     _rotController.dispose();
     super.dispose();
   }
@@ -58,6 +64,10 @@ class _OrbitalSkillSpheresState extends State<OrbitalSkillSpheres>
           indices
             ..remove(_hoveredIndex!)
             ..add(_hoveredIndex!);
+        } else if (_closingIndex != null) {
+          indices
+            ..remove(_closingIndex!)
+            ..add(_closingIndex!);
         }
 
         return SizedBox(
@@ -72,31 +82,46 @@ class _OrbitalSkillSpheresState extends State<OrbitalSkillSpheres>
                 final effectiveValue =
                     (_hoveredIndex == i && _frozenValue != null)
                         ? _frozenValue!
-                        : currentValue;
+                        : (_closingIndex == i && _closingFrozenValue != null)
+                            ? _closingFrozenValue!
+                            : currentValue;
                 final angle = _angleForIndex(i, effectiveValue);
                 final offset = orbitalOffset(angle, widget.orbitRadius);
 
                 return Transform.translate(
                   offset: offset,
-                  child: FractionalTranslation(
-                    translation: const Offset(-0.5, -0.5),
-                    child: MouseRegion(
+                  child: MouseRegion(
                       cursor: SystemMouseCursors.click,
                       onEnter: (_) {
                         _frozenValue = currentValue;
                         setState(() => _hoveredIndex = i);
                       },
-                      onExit: (_) => setState(() {
-                        _hoveredIndex = null;
-                        _frozenValue = null;
-                      }),
+                      onExit: (_) {
+                        _closingTimer?.cancel();
+                        _closingIndex = i;
+                        _closingFrozenValue = _frozenValue;
+                        setState(() {
+                          _hoveredIndex = null;
+                          _frozenValue = null;
+                        });
+                        _closingTimer = Timer(
+                          const Duration(milliseconds: 350),
+                          () {
+                            if (mounted) {
+                              setState(() {
+                                _closingIndex = null;
+                                _closingFrozenValue = null;
+                              });
+                            }
+                          },
+                        );
+                      },
                       child: _SphereOrCard(
                         isHovered: _hoveredIndex == i,
                         skill: kSkills[i],
                         sphereSize: widget.sphereSize,
                       ),
                     ),
-                  ),
                 );
               }),
             ],
@@ -235,12 +260,13 @@ class _CardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Accent bar
         Container(height: 4, color: skill.color),
-        Padding(
+        Expanded(
+          child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 8, 10, 10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -306,6 +332,7 @@ class _CardContent extends StatelessWidget {
               ),
             ],
           ),
+        ),
         ),
       ],
     );
