@@ -5,11 +5,10 @@ import '../../core/constants/animation_constants.dart';
 enum PortfolioPhase {
   // Fase 1: Skills
   spheresOrbiting,
-  spheresScattering,
-  cardsAppearing,
+  spheresScattering, // morfismo sequencial: esferas → cards
   cardsDisplayed,
   // Fase 2: Identidade
-  cardsConverging,
+  cardsConverging, // morfismo sequencial reverso: cards → esferas
   spheresMerging,
   nameRevealing,
   profileRevealed,
@@ -25,37 +24,49 @@ class PortfolioController extends StateNotifier<PortfolioPhase> {
   final List<Timer> _timers = [];
 
   void _schedulePhases() {
+    // Apenas o timer inicial: após orbitar por 2s, começa o morfismo sequencial
     _timers.add(Timer(AnimDelay.sphereScatterStart, () {
       if (mounted) state = PortfolioPhase.spheresScattering;
     }));
+    // Todos os demais avanços são disparados por callbacks dos widgets de morfismo
+  }
 
-    _timers.add(Timer(AnimDelay.cardMorphStart, () {
-      if (mounted) state = PortfolioPhase.cardsAppearing;
+  /// Chamado pelo SequentialMorphGrid quando todas as 9 esferas viraram cards.
+  void onMorphOutComplete() {
+    if (!mounted || state != PortfolioPhase.spheresScattering) return;
+    state = PortfolioPhase.cardsDisplayed;
+    // Auto-advance após 5s; usuário pode interagir com os cards enquanto isso
+    _timers.add(Timer(AnimDuration.cardsDisplay, () {
+      if (mounted && state == PortfolioPhase.cardsDisplayed) {
+        state = PortfolioPhase.cardsConverging;
+      }
     }));
+  }
 
-    _timers.add(Timer(AnimDelay.cardDisplayStart, () {
-      if (mounted) state = PortfolioPhase.cardsDisplayed;
-    }));
+  /// Chamado pelo SequentialMorphGrid quando todos os cards voltaram para esferas.
+  void onMorphInComplete() {
+    if (!mounted || state != PortfolioPhase.cardsConverging) return;
+    state = PortfolioPhase.spheresMerging;
+    _scheduleIdentityPhases();
+  }
 
-    _timers.add(Timer(AnimDelay.cardConvergeStart, () {
-      if (mounted) state = PortfolioPhase.cardsConverging;
-    }));
-
-    _timers.add(Timer(AnimDelay.sphereMergeStart, () {
-      if (mounted) state = PortfolioPhase.spheresMerging;
-    }));
-
-    _timers.add(Timer(AnimDelay.nameRevealStart, () {
+  void _scheduleIdentityPhases() {
+    _timers.add(Timer(AnimDuration.sphereMerge, () {
       if (mounted) state = PortfolioPhase.nameRevealing;
     }));
-
-    _timers.add(Timer(AnimDelay.profileRevealStart, () {
+    _timers.add(Timer(AnimDuration.sphereMerge + AnimDuration.nameReveal, () {
       if (mounted) state = PortfolioPhase.profileRevealed;
     }));
-
-    _timers.add(Timer(AnimDelay.finalDashboardStart, () {
-      if (mounted) state = PortfolioPhase.finalDashboard;
-    }));
+    _timers.add(
+      Timer(
+        AnimDuration.sphereMerge +
+            AnimDuration.nameReveal +
+            AnimDuration.profileReveal,
+        () {
+          if (mounted) state = PortfolioPhase.finalDashboard;
+        },
+      ),
+    );
   }
 
   void restart() {
