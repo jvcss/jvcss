@@ -59,45 +59,47 @@ class _ProfileFrame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedOpacity(
-      opacity: visible ? 1.0 : 0.0,
-      duration: const Duration(milliseconds: 800),
-      child: Container(
-        width: 160,
-        height: 160,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          gradient: const SweepGradient(
-            colors: [
-              Color(0xFFAB47BC),
-              Color(0xFF42A5F5),
-              Color(0xFF26C6DA),
-              Color(0xFF66BB6A),
-              Color(0xFFAB47BC),
+    return AnimatedScale(
+      scale: visible ? 1.0 : 0.6,
+      duration: const Duration(milliseconds: 600),
+      curve: Curves.easeOutBack,
+      child: AnimatedOpacity(
+        opacity: visible ? 1.0 : 0.0,
+        duration: const Duration(milliseconds: 600),
+        child: Container(
+          width: 160,
+          height: 160,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: const SweepGradient(
+              colors: [
+                Color(0xFFAB47BC),
+                Color(0xFF42A5F5),
+                Color(0xFF26C6DA),
+                Color(0xFF66BB6A),
+                Color(0xFFAB47BC),
+              ],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFFAB47BC).withValues(alpha: 0.4),
+                blurRadius: 30,
+                spreadRadius: 5,
+              ),
             ],
           ),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFFAB47BC).withValues(alpha: 0.4),
-              blurRadius: 30,
-              spreadRadius: 5,
+          padding: const EdgeInsets.all(3),
+          child: Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color(0xFF0A0E27),
             ),
-          ],
-        ),
-        padding: const EdgeInsets.all(3),
-        child: Container(
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Color(0xFF0A0E27),
-          ),
-          child: ClipOval(
-            child: _profileImage(),
+            child: ClipOval(
+              child: _profileImage(),
+            ),
           ),
         ),
-      )
-          .animate(delay: const Duration(milliseconds: 400))
-          .scale(begin: const Offset(0.5, 0.5), end: const Offset(1, 1))
-          .fadeIn(duration: const Duration(milliseconds: 600)),
+      ),
     );
   }
 

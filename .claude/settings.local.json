@@ -10,7 +10,8 @@
       "WebFetch(domain:docs.github.com)",
       "Bash(flutter analyze)",
       "Bash(dart analyze lib/presentation/widgets/orbital_skill_spheres.dart)",
-      "Bash(dart analyze lib/)"
+      "Bash(dart analyze lib/)",
+      "Bash(flutter analyze --no-fatal-infos)"
     ]
   }
 }

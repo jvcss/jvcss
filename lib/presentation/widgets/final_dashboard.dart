@@ -44,48 +44,50 @@ class _FinalDashboardState extends ConsumerState<FinalDashboard> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Section 1: Profile with orbiting spheres
-          const _ProfileSection()
-              .animate()
-              .fadeIn(duration: const Duration(milliseconds: 600))
-              .slideY(begin: 0.1, end: 0),
-
-          // Section 2: GitHub Chart
-          if (_showGitHub) ...[
-            const SizedBox(height: 16),
-            const _SectionDivider(),
-            const _GitHubSection()
+    return SizedBox.expand(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Section 1: Profile with orbiting spheres
+            const _ProfileSection()
                 .animate()
-                .fadeIn(duration: const Duration(milliseconds: 800))
-                .slideY(
-                  begin: 0.12,
-                  end: 0,
-                  duration: const Duration(milliseconds: 700),
-                  curve: Curves.easeOutCubic,
-                ),
-          ],
+                .fadeIn(duration: const Duration(milliseconds: 600))
+                .slideY(begin: 0.1, end: 0),
 
-          // Section 3: AI Judgement
-          if (_showAI) ...[
-            const SizedBox(height: 8),
-            const _SectionDivider(),
-            const _AISection()
-                .animate()
-                .fadeIn(duration: const Duration(milliseconds: 800))
-                .slideY(
-                  begin: 0.12,
-                  end: 0,
-                  duration: const Duration(milliseconds: 700),
-                  curve: Curves.easeOutCubic,
-                ),
-            const SizedBox(height: 40),
+            // Section 2: GitHub Chart
+            if (_showGitHub) ...[
+              const SizedBox(height: 16),
+              const _SectionDivider(),
+              const _GitHubSection()
+                  .animate()
+                  .fadeIn(duration: const Duration(milliseconds: 800))
+                  .slideY(
+                    begin: 0.12,
+                    end: 0,
+                    duration: const Duration(milliseconds: 700),
+                    curve: Curves.easeOutCubic,
+                  ),
+            ],
+
+            // Section 3: AI Judgement
+            if (_showAI) ...[
+              const SizedBox(height: 8),
+              const _SectionDivider(),
+              const _AISection()
+                  .animate()
+                  .fadeIn(duration: const Duration(milliseconds: 800))
+                  .slideY(
+                    begin: 0.12,
+                    end: 0,
+                    duration: const Duration(milliseconds: 700),
+                    curve: Curves.easeOutCubic,
+                  ),
+              const SizedBox(height: 40),
+            ],
           ],
-        ],
+        ),
       ),
     );
   }

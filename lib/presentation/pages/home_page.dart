@@ -26,13 +26,15 @@ class _HomePageState extends ConsumerState<HomePage> {
       body: Stack(
         children: [
           const _StarBackground(),
-          AnimatedSwitcher(
-            duration: const Duration(milliseconds: 600),
-            transitionBuilder: (child, animation) => FadeTransition(
-              opacity: animation,
-              child: child,
+          Positioned.fill(
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 600),
+              transitionBuilder: (child, animation) => FadeTransition(
+                opacity: animation,
+                child: child,
+              ),
+              child: _buildPhaseContent(phase, portfolioCtrl),
             ),
-            child: _buildPhaseContent(phase, portfolioCtrl),
           ),
           Positioned(
             bottom: 24,
@@ -77,10 +79,10 @@ class _HomePageState extends ConsumerState<HomePage> {
         return const _PhaseMerging();
 
       case PortfolioPhase.nameRevealing:
-        return const _PhaseNameReveal();
+        return const _PhaseIdentity(photoVisible: false);
 
       case PortfolioPhase.profileRevealed:
-        return const _PhaseProfileFull();
+        return const _PhaseIdentity(photoVisible: true);
 
       case PortfolioPhase.finalDashboard:
         return const FinalDashboard();
@@ -129,36 +131,19 @@ class _PhaseMerging extends StatelessWidget {
       );
 }
 
-// ── FASE: nome revelando ─────────────────────────────────────────────────────
-class _PhaseNameReveal extends StatelessWidget {
-  const _PhaseNameReveal();
+// ── FASE: identidade (nome + foto) ───────────────────────────────────────────
+class _PhaseIdentity extends StatelessWidget {
+  final bool photoVisible;
+  const _PhaseIdentity({required this.photoVisible});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox.expand(
       child: Center(
-        child: const ProfileReveal(
-          key: ValueKey('nameReveal'),
+        child: ProfileReveal(
+          key: const ValueKey('identity'),
           nameVisible: true,
-          photoVisible: false,
-        ),
-      ),
-    );
-  }
-}
-
-// ── FASE: perfil completo ────────────────────────────────────────────────────
-class _PhaseProfileFull extends StatelessWidget {
-  const _PhaseProfileFull();
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox.expand(
-      child: Center(
-        child: const ProfileReveal(
-          key: ValueKey('profileFull'),
-          nameVisible: true,
-          photoVisible: true,
+          photoVisible: photoVisible,
         ),
       ),
     );
