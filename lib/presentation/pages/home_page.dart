@@ -94,11 +94,12 @@ class _PhaseOrbiting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const OrbitingSpheres(key: ValueKey('orbiting')),
+    return SizedBox.expand(
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const OrbitingSpheres(key: ValueKey('orbiting')),
           const SizedBox(height: 32),
           Text(
             'Carregando skills...',
@@ -111,7 +112,8 @@ class _PhaseOrbiting extends StatelessWidget {
                 duration: const Duration(seconds: 2),
                 color: const Color(0xFFAB47BC),
               ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -122,8 +124,9 @@ class _PhaseMerging extends StatelessWidget {
   const _PhaseMerging();
 
   @override
-  Widget build(BuildContext context) =>
-      Center(child: const MergingSphere(key: ValueKey('merging')));
+  Widget build(BuildContext context) => SizedBox.expand(
+        child: Center(child: const MergingSphere(key: ValueKey('merging'))),
+      );
 }
 
 // ── FASE: nome revelando ─────────────────────────────────────────────────────
@@ -132,11 +135,13 @@ class _PhaseNameReveal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: const ProfileReveal(
-        key: ValueKey('nameReveal'),
-        nameVisible: true,
-        photoVisible: false,
+    return SizedBox.expand(
+      child: Center(
+        child: const ProfileReveal(
+          key: ValueKey('nameReveal'),
+          nameVisible: true,
+          photoVisible: false,
+        ),
       ),
     );
   }
@@ -148,11 +153,13 @@ class _PhaseProfileFull extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: const ProfileReveal(
-        key: ValueKey('profileFull'),
-        nameVisible: true,
-        photoVisible: true,
+    return SizedBox.expand(
+      child: Center(
+        child: const ProfileReveal(
+          key: ValueKey('profileFull'),
+          nameVisible: true,
+          photoVisible: true,
+        ),
       ),
     );
   }
