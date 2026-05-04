@@ -83,19 +83,22 @@ I'm João Victor from Brazil.
 
 ---
 
-## 📊 Code Quality & Metrics
+## 📊 Most Committed Repos
 
-<!-- WakaTime weekly coding stats — requires WakaTime account connected to GitHub -->
+<!-- Top repositories by commit count — purely from public GitHub data -->
 <div align="center">
-  <img src="https://github-readme-stats-two-tau-87.vercel.app/api/wakatime?username=jvcss&theme=gotham&layout=compact" alt="WakaTime Stats" />
-</div>
-
----
-
-## 🎯 Profile Summary
-
-<div align="center">
-  <img src="https://profile-summary-for-github.herokuapp.com/summary/jvcss" alt="Profile Summary" />
+  <a href="https://github.com/jvcss/Smart-Food">
+    <img src="https://github-readme-stats-two-tau-87.vercel.app/api/pin/?username=jvcss&repo=Smart-Food&theme=gotham" />
+  </a>
+  <a href="https://github.com/jvcss/AI-Crypto-Trader">
+    <img src="https://github-readme-stats-two-tau-87.vercel.app/api/pin/?username=jvcss&repo=AI-Crypto-Trader&theme=gotham" />
+  </a>
+  <a href="https://github.com/jvcss/Postgres-Node-React-Jest-Actions">
+    <img src="https://github-readme-stats-two-tau-87.vercel.app/api/pin/?username=jvcss&repo=Postgres-Node-React-Jest-Actions&theme=gotham" />
+  </a>
+  <a href="https://github.com/jvcss/GoDocker">
+    <img src="https://github-readme-stats-two-tau-87.vercel.app/api/pin/?username=jvcss&repo=GoDocker&theme=gotham" />
+  </a>
 </div>
 
 ---
