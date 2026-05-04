@@ -83,6 +83,16 @@ I'm João Victor from Brazil.
 
 ---
 
+## 🎯 Profile Summary
+
+<div align="center">
+  <a href="https://profile-summary-for-github.herokuapp.com/user/jvcss">
+    <img src="https://img.shields.io/badge/Profile%20Summary-Full%20Dashboard-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="Profile Summary Dashboard" />
+  </a>
+</div>
+
+---
+
 ## 📊 Most Committed Repos
 
 <!-- Top repositories by commit count — purely from public GitHub data -->
