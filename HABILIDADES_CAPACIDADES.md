@@ -1,367 +1,474 @@
 # Habilidades e Capacidades — jvcss
 
-> Este documento resume, com base nos repositórios públicos do meu GitHub, as minhas principais habilidades, áreas de atuação e nível de domínio percebido por evidências de projeto.
-
-## Visão geral
-
-Sou um desenvolvedor com forte atuação em **engenharia de software full stack**, com histórico consistente em:
-
-- **Backend e APIs** com Python, TypeScript, Node.js e FastAPI
-- **Frontend web e mobile** com Dart/Flutter, React e interfaces modernas
-- **Automação e integrações** com WhatsApp, SMS, Google Calendar, Firebase e serviços externos
-- **IA aplicada e produtos com LLMs**
-- **DevOps, containers e infraestrutura** com Docker, Terraform, HCL e ambientes self-hosted
-- **Dados, analytics e produtividade** com Streamlit, dashboards, scripts e automação empresarial
-- **Qualidade, testes e engenharia de produto**
-
-Meu portfólio mostra um perfil de profissional que não apenas implementa features, mas também estrutura soluções completas, integra sistemas, cria ferramentas reutilizáveis e experimenta arquitetura e produto.
+> Documento técnico baseado nos repositórios públicos e privados conhecidos do meu GitHub, refletindo áreas de domínio, repertório prático e profundidade de atuação em engenharia de software.
 
 ---
 
-## 1. Backend e desenvolvimento de APIs
+## 1. Perfil profissional
 
-### Domínio percebido: alto
+Sou um profissional com perfil **full stack**, forte atuação em **backend, automação, integração de sistemas, IA aplicada, BI e infraestrutura**. Meu histórico de projetos mostra capacidade de atuar desde a camada de produto e interface até a orquestração de serviços, dados, deploy e operação.
 
-Tenho experiência clara em construção de backends e APIs, com foco em:
+Meu diferencial é unir:
 
-- criação de APIs HTTP
-- integração entre serviços
-- processamento assíncrono
-- persistência em banco de dados
-- automação de tarefas e fluxos de negócio
-
-### Evidências nos repositórios
-
-- `app_model_backend` — backend com **FastAPI, Redis, MySQL e Celery**
-- `httpsms` — envio/recebimento de SMS via API HTTP usando Android
-- `calendar-task-synchronization` — sincronização entre Google Calendar e OpenProject
-- `publisher` — automação e publicação de conteúdo/processos
-- `fire-admin` — automação e monitoramento de apps Firebase
-- `Express-Node-MYSQL` — stack Node.js + MySQL + Express
-- `Postgres-Node-React-Jest-Actions` — backend com foco em integração com frontend, testes e automação
-- `pdf-worker` — geração de PDFs em Node.js
-
-### Competências inferidas
-
-- desenho de endpoints REST
-- modelagem de fluxos de domínio
-- uso de filas e tarefas assíncronas
-- integração com bancos relacionais
-- integração com serviços de terceiros
-- criação de serviços utilitários reutilizáveis
+- construção de software orientado a negócio
+- capacidade de integrar múltiplos sistemas
+- automação de processos manuais
+- experimentação com IA e produtos inteligentes
+- entrega de soluções técnicas com visão prática e escalável
 
 ---
 
-## 2. Frontend web
+## 2. Principais áreas de domínio
 
-### Domínio percebido: alto
+### 2.1 Backend e desenvolvimento de APIs
 
-Tenho domínio consistente de frontend, especialmente na construção de interfaces funcionais, componentes e experiências de produto.
+**Domínio: alto**
 
-### Evidências nos repositórios
+Tenho experiência sólida em criação de APIs, serviços backend e processamento de regras de negócio, com atenção a arquitetura, persistência e integração.
 
-- `app_model_frontend` — frontend com **Flutter, Riverpod, MVVM** e também **ReactJS + Vite**
-- `jvcss` — portfólio pessoal em **Dart**
-- `builder` — construtor visual de websites
-- `frappe-ui` — componentes e utilitários para UI
-- `soft-ui-dashboard-tall` — dashboard baseado em stack web moderna
-- `org-viewer`, `org_chart`, `OrgChart` — visualização de estruturas organizacionais
-- `aareceitas` — site/app voltado para experiência de uso e conteúdo
-- `work-breakdown-structure-html` — projeto web estático/visual
-- `Identifies-Accessibility-Issues-in-HTML` — foco em acessibilidade na web
+**Tecnologias recorrentes**
 
-### Competências inferidas
-
-- construção de interfaces responsivas
-- componentização
-- arquitetura de frontend com separação de responsabilidades
-- gerenciamento de estado
-- design de dashboards e produtos web
-- acessibilidade básica e semântica HTML
-- integração frontend + backend
-
----
-
-## 3. Desenvolvimento mobile
-
-### Domínio percebido: alto
-
-Há forte evidência de experiência em mobile, principalmente com Flutter e ecossistema Dart.
-
-### Evidências nos repositórios
-
-- `flow` — app de finanças pessoais em Flutter
-- `estude-comigo` — app em Dart
-- `padaria_dona_rosa` — app em Dart
-- `Smart-Food` — app com previsão de fluxo de clientes
-- `tiger_fortune` — app em Dart
-- `use_pluto` — uso de widgets/componentes Flutter/Dart
-- `statemanager` — estudo e snippets de gerenciamento de estado
-- `app_model_frontend` — Flutter com Riverpod e MVVM
-
-### Competências inferidas
-
-- arquitetura mobile moderna
-- gerenciamento de estado
-- organização por camadas / MVVM
-- construção de apps de negócio
-- experiências de usuário para dispositivos móveis
-- composição de widgets e design responsivo
-
----
-
-## 4. Inteligência artificial e produtos com LLMs
-
-### Domínio percebido: alto
-
-Meu portfólio mostra forte familiaridade com IA aplicada, automação inteligente e produtos orientados por modelos de linguagem.
-
-### Evidências nos repositórios
-
-- `clau decode_to_api` — expõe API OpenAI-like usando credenciais do Claude Code
-- `dograh` — plataforma de voz com suporte a Speech-to-Speech, LLM, STT/TTS e MCP
-- `cognee` — memória para agentes de IA
-- `ai_for_code_alchemist` — projeto orientado a IA para código
-- `perplexity-ai` — wrapper/API e gerador de conta para Perplexity
-- `NLWeb` — projeto de web em linguagem natural
-- `dev-room` — ambiente com GPT via Docker
-- `AI-Crypto-Trader` — modelo de IA para lógica de negócio
-- `Crypto_Price_At` — automação/IA aplicada a dados financeiros
-
-### Competências inferidas
-
-- integração com APIs de IA
-- design de produtos baseados em agentes
-- automação de fluxos com LLM
-- plataformas conversacionais e voz
-- experimentação com tooling de IA
-- embedding de IA em aplicações reais
-
----
-
-## 5. Automação, integrações e workflows
-
-### Domínio percebido: alto
-
-Eu tenho um perfil muito forte em automação de processos e integrações entre sistemas.
-
-### Evidências nos repositórios
-
-- `httpsms` — automação de SMS via smartphone
-- `calendar-task-synchronization` — sincronização entre ferramentas de calendário e gestão
-- `fire-admin` — administração e automação Firebase
-- `whatsapper` — automação de WhatsApp
-- `evolution-api` — integração com WhatsApp
-- `Baileys` / `whatsapp-web.js` — bibliotecas e integrações com WhatsApp Web
-- `Excel-VBA-UI-Auto` — automação de Excel
-- `Git-Patch-Applier` — automação de aplicação de patches via branches
-- `publisher` — automação de publicação
-
-### Competências inferidas
-
-- integração entre serviços SaaS
-- automação de rotinas operacionais
-- criação de ferramentas internas
-- orquestração de tarefas
-- scripts de produtividade
-- conectividade com mensageria e APIs externas
-
----
-
-## 6. DevOps, infraestrutura e containers
-
-### Domínio percebido: intermediário a alto
-
-Existe uma base sólida em infra, automação de ambiente e operação de sistemas.
-
-### Evidências nos repositórios
-
-- `OwnCloudAWSTerraformIAC` — infraestrutura como código com Terraform e AWS
-- `taiga-docker` — containerização de ambiente
-- `dev-room` — ambiente de desenvolvimento com Docker
-- `GoDocker` — implementação de Docker from scratch em Go
-- `flask_wazuh` — integração com observabilidade/segurança
-
-### Competências inferidas
-
-- infraestrutura como código
-- containerização
-- ambientes self-hosted
-- deploy e orquestração de serviços
-- observabilidade e segurança operacional
-- entendimento de runtime e isolamento de aplicação
-
----
-
-## 7. Bancos de dados e modelagem de dados
-
-### Domínio percebido: intermediário a alto
-
-Meu trabalho indica boa vivência com persistência e bancos relacionais.
-
-### Evidências nos repositórios
-
-- `app_model_backend` — MySQL, Redis
-- `Express-Node-MYSQL` — MySQL
-- `Postgres-Node-React-Jest-Actions` — PostgreSQL
-- `dashboard_streamlit` — dados e visualização
-- projetos com automação e backends que exigem persistência estruturada
-
-### Competências inferidas
-
-- uso de bancos relacionais
-- modelagem orientada ao domínio
-- cache e filas com Redis
-- integração entre backend e dados
-- consultas e estruturação para aplicações de negócio
-
----
-
-## 8. Qualidade de software, testes e manutenção
-
-### Domínio percebido: intermediário a alto
-
-Há sinais de preocupação com engenharia sustentável e qualidade.
-
-### Evidências nos repositórios
-
-- `Postgres-Node-React-Jest-Actions` — uso explícito de **Jest** e automação
-- `tester-qa-app` — foco em QA
-- `Identifies-Accessibility-Issues-in-HTML` — preocupação com qualidade web
-- vários repositórios utilitários e bibliotecas demonstram manutenção contínua e evolução incremental
-
-### Competências inferidas
-
-- testes automatizados
-- validação de comportamento
-- manutenção de código legado e reutilizável
-- preocupação com experiência do usuário e qualidade de interface
-- estruturação de projetos com foco em confiabilidade
-
----
-
-## 9. Dados, analytics e BI
-
-### Domínio percebido: intermediário
-
-Também há atuação relevante em dados, relatórios e visualização.
-
-### Evidências nos repositórios
-
-- `dashboard_streamlit` — dashboards em Python
-- `sql_to_md_streamlit` — transformação e utilidade para dados/texto
-- `power-bi-features` — demonstração de performance analysis e customer service
-- `Crypto_Price_At` — análise/aplicação em contexto financeiro
-
-### Competências inferidas
-
-- dashboards analíticos
-- visualização de dados
-- automação de relatórios
-- uso de Python para dados
-- apoio à tomada de decisão
-
----
-
-## 10. Linguagens e ecossistema técnico
-
-### Linguagens com evidência forte
-
-- **Python** — backend, automação, IA, dados, scraping
-- **Dart** — Flutter e aplicações móveis/web
-- **JavaScript / TypeScript** — frontend, backend, integrações, ferramentas
-- **Go** — infraestrutura e experimentação de baixo nível
-- **HCL / Terraform** — infraestrutura como código
-- **HTML / CSS** — interfaces e projetos web
-- **VBA** — automação de escritório
-- **PowerShell** — automação operacional
-- **PHP** — projetos e componentes web
-
-### Ferramentas e frameworks recorrentes
-
+- Python
 - FastAPI
-- Express
-- React
-- Vite
-- Flutter
-- Riverpod
-- MVVM
+- Node.js
+- TypeScript
+- Ruby on Rails / Ruby
+- Go
 - Redis
 - MySQL
 - PostgreSQL
 - Celery
+- SQL e PL/pgSQL
+
+**Evidências em projetos**
+
+- `app_model_backend` — backend com FastAPI, Redis, MySQL e Celery
+- `fast-deliv-backend` — backend em Python com SQL/PLpgSQL e lógica de negócio
+- `api-finance` — API voltada a domínio financeiro
+- `api-liberty-bank` — backend de banco/serviços financeiros
+- `evo-crm-community` — projeto multi-stack com backend e automações
+- `evo-ai-crm-community` — backend Ruby com lógica de produto e integração
+- `libertycard-evolution-api` — integração e serviços relacionados a comunicação/mensageria
+- `docread` — serviço backend para processamento de documentos
+- `publisher` — automação de publicação/processamento
+- `calendar-task-synchronization` — sincronização de tarefas entre Google Calendar e OpenProject
+
+**Competências associadas**
+
+- desenho de endpoints e contratos de API
+- regras de negócio e validações
+- integração com bancos relacionais
+- jobs assíncronos e filas
+- organização por camadas de aplicação
+- evolução incremental de backend em produto real
+
+---
+
+### 2.2 Frontend web e experiência de interface
+
+**Domínio: alto**
+
+Tenho boa vivência em frontend moderno, com foco em componentes, dashboards, responsividade e integração com backend.
+
+**Tecnologias recorrentes**
+
+- TypeScript
+- JavaScript
+- HTML
+- SCSS
+- React
+- Vite
+- Tailwind CSS
+- Blade/Laravel UI
+- Liquid
+
+**Evidências em projetos**
+
+- `dashboard_meta_google_kommo` — frontend em TypeScript com foco em dashboard
+- `evo-ai-front-community` — frontend para produto de IA/CRM
+- `evo-ai-frontend-community` — camada frontend do ecossistema Evo
+- `dashboard_bi_fabio` — dashboard BI em Next.js/TypeScript
+- `solidy_landing` — landing page com foco em UX, acessibilidade e performance
+- `apps_show_case` — componente de vitrine de aplicativos/produtos
+- `builder` — construtor visual de websites
+- `frappe-ui` — componentes para UI ágil
+- `OrgChart`, `org_chart`, `org-viewer` — visualização de estruturas organizacionais
+
+**Competências associadas**
+
+- construção de UI responsiva
+- arquitetura baseada em componentes
+- integração com APIs e estados assíncronos
+- dashboards e telas corporativas
+- acessibilidade e contraste visual
+- otimização de experiência de uso
+
+---
+
+### 2.3 Desenvolvimento mobile
+
+**Domínio: alto**
+
+Há forte atuação em Flutter/Dart, com entrega de apps funcionais, produtos de negócio e interfaces orientadas à experiência.
+
+**Tecnologias recorrentes**
+
+- Dart
+- Flutter
+- Riverpod
+- MVVM
+- MobX / gerenciamento de estado
+- widgets customizados
+
+**Evidências em projetos**
+
+- `flow` — app de finanças pessoais
+- `liberty-bank` — app bancário em Dart
+- `jvcss` — portfólio pessoal em Dart
+- `estude-comigo` — app em Dart
+- `padaria_dona_rosa` — app em Dart
+- `Smart-Food` — aplicação com previsão de fluxo de clientes
+- `tiger_fortune` — app em Dart
+- `app_model_frontend` — Flutter com Riverpod e MVVM
+
+**Competências associadas**
+
+- arquitetura mobile
+- gerenciamento de estado
+- construção de apps de negócio
+- componentes reutilizáveis
+- navegação e responsividade
+- integração mobile com backend
+
+---
+
+### 2.4 Inteligência artificial e automação inteligente
+
+**Domínio: alto**
+
+Tenho um repertório muito forte em IA aplicada, agentes, integração com LLMs e automação inteligente orientada a produto.
+
+**Tecnologias e frentes recorrentes**
+
+- OpenAI / modelos LLM
+- APIs de IA
+- agentes e workflows
+- STT/TTS e voz
+- NLP e processamento inteligente
+- automação com IA
+
+**Evidências em projetos**
+
+- `dograh` — plataforma de voz com suporte a LLM, STT/TTS, MCP e telephony
+- `cognee` — memória para agentes de IA
+- `ai_for_code_alchemist` — projeto orientado a IA para código
+- `perplexity-ai` — wrapper e automação em torno do ecossistema Perplexity
+- `NLWeb` — projeto de web em linguagem natural
+- `ccode_to_api` / `claudecode_to_api` — exposição de APIs com suporte a modelos/credenciais de IA
+- `evo-bot-runtime` — runtime com integração para automação inteligente
+- `evo-nexus` — serviço de orquestração ligado ao ecossistema Evo
+- `evo-ai-core-service-community` — core service em Go para IA
+- `evo-ai-processor-community` — processamento em Python para IA
+- `evo-ai-crm-community` — CRM com camada de IA
+- `evo-ai-front-community` — frontend para produto de IA
+
+**Competências associadas**
+
+- integração de IA em produtos reais
+- orquestração de pipelines inteligentes
+- uso de IA em CRM, atendimento e automação
+- design de experiências conversacionais
+- backend para serviços de IA
+- experimentação e prototipação rápida
+
+---
+
+### 2.5 Automação, integrações e mensageria
+
+**Domínio: alto**
+
+Tenho forte vocação para automação de processos e conexão entre sistemas heterogêneos.
+
+**Evidências em projetos**
+
+- `httpsms` — API para SMS via Android
+- `whatsapper` — automação de WhatsApp
+- `evolution-api` — integração com WhatsApp
+- `whatsapp-web.js` / `Baileys` — ecossistema de mensageria WhatsApp
+- `evo-crm-community` — integração de CRM e operação
+- `evo-auth-service-community` — serviço de autenticação do ecossistema
+- `conecta` — integração entre sistemas e/ou fluxos de negócio
+- `calendar-task-synchronization` — sincronização entre calendário e gestão
+- `fire-admin` — automação de Firebase
+- `publisher` — automação de publicação
+- `Excel-VBA-UI-Auto` — automação de escritório
+
+**Competências associadas**
+
+- integração por API e webhook
+- automação de tarefas operacionais
+- mensageria e canais de comunicação
+- bots e rotinas de atendimento
+- sincronização entre ferramentas corporativas
+- substituição de processos manuais por software
+
+---
+
+### 2.6 DevOps, infraestrutura e GitOps
+
+**Domínio: intermediário a alto**
+
+Meu histórico privado e público mostra capacidade real em infraestrutura, deploy, ambientes self-hosted e automação de plataforma.
+
+**Tecnologias recorrentes**
+
+- Docker
+- Dockerfile
+- Shell
+- Makefile
+- Go
+- Terraform / HCL
+- GitOps
+- CI/CD
+- ambientes de deploy
+- observabilidade operacional
+
+**Evidências em projetos**
+
+- `infra-gitops` — base de infraestrutura e GitOps
+- `dograh-deploy` — scripts e automação de deploy
+- `OwnCloudAWSTerraformIAC` — infraestrutura como código na AWS
+- `taiga-docker` — ambiente containerizado
+- `GoDocker` — implementação de Docker from scratch em Go
+- `flask_wazuh` — integração com segurança/monitoramento
+- `evo-bot-runtime` — execução de runtime/serviços
+- `api-finance`, `api-liberty-bank`, `fast-deliv-backend` — serviços preparados para operação em ambiente real
+
+**Competências associadas**
+
+- provisionamento e automação de infraestrutura
+- empacotamento com containers
+- estratégias de deploy e atualização
+- padronização de ambiente
+- integração com observabilidade e segurança
+- visão de plataforma e operação
+
+---
+
+### 2.7 Dados, BI e analytics
+
+**Domínio: alto**
+
+Tenho atuação forte em dados e indicadores, especialmente em produtos voltados a análise operacional e executiva.
+
+**Tecnologias recorrentes**
+
+- Power BI
+- Python
+- SQL
+- dashboards
+- modelagem analítica
+- integração com SharePoint e fontes corporativas
+- automação de relatórios
+
+**Evidências em projetos**
+
+- `liberty_powerbi` — projeto diretamente ligado a BI corporativo
+- `dashboard_meta_google_kommo` — dashboard analítico
+- `dashboard_bi_fabio` — dashboard BI em Next.js
+- `bi_backend` — backend de BI com múltiplos relatórios e cálculos analíticos
+- `analise_compras` — análises e automação de dados
+- `power-bi-features` — análise de performance/customer service
+- `finance` — domínio de dados financeiros
+- `liberty-finance-processors` — processamento de dados financeiros
+
+**Competências associadas**
+
+- criação de dashboards executivos
+- transformação e modelagem de dados
+- indicadores de negócio
+- automação de relatórios
+- backend para BI
+- integração com fontes corporativas
+
+---
+
+### 2.8 Banco de dados e modelagem
+
+**Domínio: intermediário a alto**
+
+Trabalho com persistência de dados de forma consistente, inclusive em sistemas com volume, regras de negócio e integrações externas.
+
+**Tecnologias recorrentes**
+
+- MySQL
+- PostgreSQL
+- Redis
+- SQL
+- PL/pgSQL
+- schema design
+- migrations
+
+**Evidências em projetos**
+
+- `app_model_backend` — MySQL e Redis
+- `fast-deliv-backend` — SQL, PL/pgSQL
+- `bi_backend` — consultas e processamento analítico
+- `api-finance` — domínio financeiro com persistência estruturada
+- `api-liberty-bank` — dados bancários/financeiros
+- `liberty-finance-processors` — processamento de dados financeiros
+
+**Competências associadas**
+
+- modelagem relacional
+- consultas analíticas
+- uso de cache e persistência auxiliar
+- automação de ETL/transformações
+- otimização de leitura e organização de dados
+
+---
+
+### 2.9 Qualidade, testes e engenharia de produto
+
+**Domínio: intermediário a alto**
+
+Meu repertório indica preocupação com qualidade, validação e evolução segura das soluções.
+
+**Evidências em projetos**
+
+- `tester-qa-app` — foco em QA
+- `Postgres-Node-React-Jest-Actions` — testes e automação
+- `solidy_landing` — ajustes de acessibilidade, contraste e estrutura
+- `app_model_backend` — instruções e padrões de desenvolvimento para agentes
+- `bi_backend` — evolução incremental de endpoints e regras
+- `dashboard_meta_google_kommo` — produto com entrega analítica consistente
+
+**Competências associadas**
+
+- testes automatizados
+- revisão de comportamento
+- padronização de projeto
+- validação de fluxo de dados
+- preocupação com usabilidade e acessibilidade
+- manutenção contínua com baixa regressão
+
+---
+
+## 3. Linguagens em que tenho presença forte
+
+### Muito fortes
+
+- Python
+- TypeScript
+- JavaScript
+- Dart
+- Ruby
+
+### Fortes em contextos específicos
+
+- Go
+- SQL
+- PL/pgSQL
+- HTML
+- SCSS
+- Shell
+- HCL / Terraform
+- Makefile
+- VBA
+- PowerShell
+
+---
+
+## 4. Frameworks e ferramentas recorrentes
+
+- FastAPI
+- Flask
+- Express
+- Node.js
+- React
+- Next.js
+- Vite
+- Flutter
+- Riverpod
+- MVVM
+- Redux/Zustand em contextos web modernos
+- Celery
+- Redis
+- MySQL
+- PostgreSQL
 - Docker
 - Terraform
+- Power BI
 - Streamlit
-- Firebase
 - GitHub Actions
-- Jest
+- Firebase
 
 ---
 
-## 11. Perfil de engenharia de software
+## 5. Perfil de engenharia de software
 
-Com base nos repositórios, meu perfil técnico combina:
+Meu perfil técnico combina:
 
-- **Visão de produto**: construo soluções com utilidade real, não apenas experimentos isolados
-- **Visão full stack**: consigo atuar do frontend à infraestrutura
-- **Automação forte**: transformo processos manuais em ferramentas e APIs
-- **Experimentação técnica**: testo novas tecnologias e padrões com frequência
-- **Integração de sistemas**: conecto plataformas e serviços distintos
-- **Foco em aplicação prática**: muitos projetos resolvem problemas concretos
+- **capacidade full stack real**
+- **orientação a produto e negócio**
+- **automação de processos**
+- **integração entre sistemas corporativos**
+- **infraestrutura e operação**
+- **dados e BI**
+- **IA aplicada com valor prático**
 
----
+Isso me permite atuar em cenários como:
 
-## 12. Resumo executivo das capacidades
-
-### O que eu domino com mais força
-
-- desenvolvimento de APIs e backends
-- apps Flutter/Dart e interfaces modernas
-- integrações com serviços externos e automação
-- produtos com IA e LLMs
-- construção de ferramentas utilitárias e plataformas
-- engenharia full stack com múltiplas linguagens
-
-### O que eu consigo fazer com confiança
-
-- criar aplicações do zero
-- estruturar backend, frontend e integrações
-- automatizar rotinas de negócio
-- desenhar protótipos funcionais rapidamente
-- evoluir soluções para produção
-- explorar novas stacks quando o problema exige
-
-### Áreas em que tenho repertório técnico relevante
-
-- DevOps e containers
-- bancos relacionais e cache
-- QA e testes automatizados
-- dados e dashboards
-- acessibilidade e qualidade web
-- ferramentas internas e produtividade
+- construção de plataformas internas
+- desenvolvimento de produtos SaaS
+- serviços de integrações e mensageria
+- backends com regras de negócio complexas
+- dashboards executivos e relatórios analíticos
+- automação de operações e fluxos empresariais
+- aplicações que unem software, dados e IA
 
 ---
 
-## 13. Observação final
+## 6. Síntese do que domino
 
-Este arquivo foi escrito a partir de sinais públicos presentes nos meus repositórios e deve ser entendido como uma **descrição técnica de capacidade percebida**. Ele pode ser refinado com base em experiência profissional, contexto de mercado e objetivo específico, como:
+### Domínio mais forte
+
+- backend e APIs
+- frontend moderno
+- Flutter/Dart e mobile
+- IA aplicada e automação inteligente
+- integrações e mensageria
+- BI e analytics
+
+### Domínio relevante e comprovado
+
+- DevOps, containers e GitOps
+- bancos relacionais e SQL
+- qualidade e testes
+- observabilidade e manutenção de sistemas
+- automação corporativa
+- ferramentas internas e plataformas
+
+### Diferenciais técnicos
+
+- transitar entre produto, engenharia e dados
+- criar soluções de ponta a ponta
+- adaptar stack conforme o problema
+- atuar em contextos enterprise e também em protótipos rápidos
+- transformar ideias em sistemas operacionais reais
+
+---
+
+## 7. Conclusão
+
+Este documento resume minha experiência técnica com base em evidências públicas e privadas conhecidas do meu ecossistema GitHub. Ele mostra um perfil de engenheiro de software com forte amplitude e boa profundidade, capaz de entregar em múltiplas frentes: **backend, frontend, mobile, IA, BI, automação e infraestrutura**.
+
+Se necessário, este material pode ser adaptado para:
 
 - currículo técnico
+- LinkedIn
+- README de perfil
 - portfólio pessoal
-- README do perfil
-- bio para LinkedIn
 - apresentação para entrevistas
-
----
-
-## 14. Próximos passos sugeridos
-
-Se eu quiser deixar este documento ainda melhor, posso adaptar para:
-
-1. **tom mais profissional e conciso**
-2. **tom mais comercial / portfólio**
-3. **tom de currículo sênior**
-4. **tom em inglês**
-5. **versão curta para README do perfil**
+- versão em inglês
 
